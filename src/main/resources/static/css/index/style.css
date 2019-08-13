@@ -71,12 +71,12 @@
     display: inline-block;
     width: 12px;
     height: 12px;
-    background: url(../img/arrow.png) no-repeat center center;
+    background: url(image/index/arrow.png) no-repeat center center;
 }
 /*down-icon-circle*/
 .down-icon-circle{
     border-radius: 12px;
-    background: #f40 url(../img/arrow.png) no-repeat center;
+    background: #f40 url(image/index/arrow.png) no-repeat center;
 }
 .run-up{
     transition-duration: .5s;
@@ -439,8 +439,8 @@
     padding-left: 10px;
     border: none;
     outline: none;
-    background: url(../img/search.png) no-repeat 98% center,
-                url(../img/s.png) no-repeat 2% center;
+    background: url(image/index/search.png) no-repeat 98% center,
+                url(image/index/s.png) no-repeat 2% center;
 }
 .search-in-scroll{
     height: 27px;
@@ -656,52 +656,52 @@
    border-right: 1px solid #fff;
 }
 .s_1{
-    background: url(../img/001.png) no-repeat 10px center;
+    background: url(image/index/001.png) no-repeat 10px center;
 }
 .s_2{
-    background: url(../img/002.png) no-repeat 10px center;
+    background: url(image/index/002.png) no-repeat 10px center;
 }
 .s_3{
-    background: url(../img/003.png) no-repeat 10px center;
+    background: url(image/index/003.png) no-repeat 10px center;
 }
 .s_4{
-    background: url(../img/004.png) no-repeat 10px center;
+    background: url(image/index/004.png) no-repeat 10px center;
 }
 .s_5{
-    background: url(../img/005.png) no-repeat 10px center;
+    background: url(image/index/005.png) no-repeat 10px center;
 }
 .s_6{
-    background: url(../img/006.png) no-repeat 10px center;
+    background: url(image/index/006.png) no-repeat 10px center;
 }
 .s_7{
-    background: url(../img/007.png) no-repeat 10px center;
+    background: url(image/index/007.png) no-repeat 10px center;
 }
 .s_8{
-    background: url(../img/008.png) no-repeat 10px center;
+    background: url(image/index/008.png) no-repeat 10px center;
 }
 .s_9{
-    background: url(../img/009.png) no-repeat 10px center;
+    background: url(image/index/009.png) no-repeat 10px center;
 }
 .s_10{
-    background: url(../img/010.png) no-repeat 10px center;
+    background: url(image/index/010.png) no-repeat 10px center;
 }
 .s_11{
-    background: url(../img/011.png) no-repeat 10px center;
+    background: url(image/index/011.png) no-repeat 10px center;
 }
 .s_12{
-    background: url(../img/012.png) no-repeat 10px center;
+    background: url(image/index/012.png) no-repeat 10px center;
 }
 .s_13{
-    background: url(../img/013.png) no-repeat 10px center;
+    background: url(image/index/013.png) no-repeat 10px center;
 }
 .s_14{
-    background: url(../img/014.png) no-repeat 10px center;
+    background: url(image/index/014.png) no-repeat 10px center;
 }
 .s_15{
-    background: url(../img/015.png) no-repeat 10px center;
+    background: url(image/index/015.png) no-repeat 10px center;
 }
 .s_16{
-    background: url(../img/016.png) no-repeat 10px center;
+    background: url(image/index/016.png) no-repeat 10px center;
 }
 /*right-con*/
 .right-con{
@@ -967,7 +967,7 @@
     width: 298px;
     height: 138px;
     border: 1px solid #ddd;
-    background: url(../img/user-bg.png) no-repeat right top;
+    background: url(image/index/user-bg.png) no-repeat right top;
 }
 .gold-top{
     margin: 10px auto 0 auto;
@@ -1006,7 +1006,7 @@
     margin: 4px 5px 0 5px;
     width: 18px;
     height: 18px;
-    background: url(../img/tao.png) no-repeat center;
+    background: url(image/index/tao.png) no-repeat center;
 }
 .vip-home:hover,
 .get-gold:hover{
@@ -1142,7 +1142,7 @@
 }
 .tell-num{
     width: 145px;
-    background: url(../img/user-num.png) no-repeat 95% center;
+    background: url(image/index/user-num.png) no-repeat 95% center;
 }
 /*service-head*/
 .service-head{
@@ -1204,7 +1204,7 @@
     border-radius: 3px;
     color: #fff;
     outline: none;
-    background: #f40 url(../img/down.png) no-repeat 90% center;
+    background: #f40 url(/image/index/down.png) no-repeat 90% center;
     cursor: pointer;
 }
 /*sub-nav-cell*/
