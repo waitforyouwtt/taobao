@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Title</title>
+</head>
+<body>
+<form action="/enclosure-send" method="post" enctype="multipart/form-data">
+    <input type="text" placeholder="发送人" name="emailSender" />
+    <input type="text" placeholder="接收人" name="emailRecipients" />
+    <input type="text" placeholder="抄送人" name="emailCopyPersons" />
+    <input type="text" placeholder="邮件主题" name="emailSubject" />
+    <input type="text" placeholder="邮件内容" name="emailContent" />
+    <input type="file" placeholder="附件1" name="files" />
+    <input type="file" placeholder="附件2" name="files" />
+    <input type="submit" value="提交"/>
+</form>
+
+</body>
+</html>

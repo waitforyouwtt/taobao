@@ -18,4 +18,7 @@ public class IndexController {
     public String index(){
         return "/index";
     }
+
+    @GetMapping("/email")
+    public String email(){return "/email";}
 }

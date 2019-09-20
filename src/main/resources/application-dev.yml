@@ -26,6 +26,19 @@ spring:
     encoding: UTF-8
     cache: false
 
+  mail:
+    default-encoding: UTF-8
+    host: smtp.qq.com
+    protocol: smtp
+    username: 1140867582@qq.com
+    password: cxvyyyphryozhjfe
+
+  smtp:
+    auth: true
+    starttls:
+      enable: true
+      required: true
+
 mybatis:
   mapper-locations: classpath*:mapper/*Mapper.xml
   type-aliases-package: com.yidiandian.entity
