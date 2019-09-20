@@ -23,14 +23,24 @@ public class UserInfo {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
+    @Basic
+    @Column(name = "user_name",columnDefinition="varchar(50) COMMENT '用户名'")
     private String userName;
 
+    @Basic
+    @Column(name = "nick_name",columnDefinition="varchar(50) COMMENT '用户昵称'")
     private String nickName;
 
+    @Basic
+    @Column(name = "password",columnDefinition="varchar(200) COMMENT '用户密码'")
     private String password;
 
+    @Basic
+    @Column(name = "age",columnDefinition="int(11) COMMENT '用户年龄'")
     private Integer age;
 
+    @Basic
+    @Column(name = "address",columnDefinition="varchar(200) COMMENT '用户地址'")
     private String address;
 
 
