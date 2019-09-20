@@ -16,7 +16,7 @@ import javax.persistence.*;
 @Entity
 @Builder
 @Table(name ="tb_friendship_link")
-@org.hibernate.annotations.Table(appliesTo = "tb_user_info",comment="底部友情链接表")
+@org.hibernate.annotations.Table(appliesTo = "tb_friendship_link",comment="底部友情链接表")
 public class FriendshipLink {
 
     @Id
