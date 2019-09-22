@@ -2,11 +2,13 @@ package com.yidiandian.controller;
 
 import com.yidiandian.service.EmailService;
 import com.yidiandian.view.EmailView;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
@@ -18,6 +20,7 @@ import java.util.List;
  * @Email: 15290810931@163.com
  */
 @RestController
+@Slf4j
 public class EmailController {
 
     @Autowired
@@ -32,9 +35,7 @@ public class EmailController {
 
     //发送文本消息，不带附件
     @PostMapping("/enclosure-send")
-    public String enclosureSend(@ModelAttribute EmailView vo){
-        List<String> fileArray = Arrays.asList("D:\\photo\\cat.jpg","D:\\photo\\pretty boy.jpg","D:\\photo\\self.jpg" );
-        vo.setEmailFiles(fileArray);
+    public String enclosureSend(@ModelAttribute EmailView vo,HttpServletRequest request){
         emailService.enclosureSend(vo);
         return "true";
     }

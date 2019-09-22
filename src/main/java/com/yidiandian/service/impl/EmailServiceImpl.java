@@ -93,14 +93,27 @@ public class EmailServiceImpl implements EmailService {
             if (!CollectionUtils.isEmpty(files)) {
                 for (MultipartFile file : files) {
                     String fileName = file.getOriginalFilename();
-                    emailFileList.add(fileName);
+                    emailFileList.add("D:\\photo\\"+fileName);
                 }
             }
             log.info("文件集合：{}",emailFileList);
 
+            if (!CollectionUtils.isEmpty( emailFileList )){
+                FileSystemResource file=null;
+
+                String[] fileList = new String[emailFileList.size()];
+                emailFileList.toArray(fileList);
+
+                for (int i = 0; i < fileList.length; i++) {
+                    //添加附件
+                    file=new FileSystemResource(fileList[i]);
+                    helper.addAttachment(fileList[i].substring(fileList[i].lastIndexOf(File.separator)+1), file);
+                }
+            }
+
 
             //验证文件数据是否为空
-            if(null != vo.getEmailFiles()){
+            /*if(null != vo.getEmailFiles()){
                 FileSystemResource file=null;
 
                 String[] fileList = new String[vo.getEmailFiles().size()];
@@ -109,9 +122,9 @@ public class EmailServiceImpl implements EmailService {
                 for (int i = 0; i < fileList.length; i++) {
                     //添加附件
                     file=new FileSystemResource(fileList[i]);
-                    helper.addAttachment(fileList[i].substring(fileList[i].lastIndexOf(File.separator)), file);
+                    helper.addAttachment(fileList[i].substring(fileList[i].lastIndexOf(File.separator)+1), file);
                 }
-            }
+            }*/
             mailSender.send(message);
         } catch (MessagingException e) {
            log.info("[邮件发送异常]：邮件多人多邮件带抄送人发送异常信息：{}",e.getMessage());
