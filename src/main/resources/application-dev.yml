@@ -3,21 +3,21 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&allowMultiQueries=true
     username: root
-    password: root
+    #Mac的密码：
+    password: root123456
   jpa:
       hibernate:
         ddl-auto: update
       show-sql: true
 
-  redis:
-    host: 127.0.0.1
-    port: 6379
-    password:
-    jedis:
-      pool:
-        max-active: 8
-        max-wait: -1
-        max-idle: 500
+  #redis:
+  #  host: 127.0.0.1
+  #  port: 6379
+  ##  jedis:
+   #   pool:
+   #     max-active: 8
+   #     max-wait: -1
+   #     max-idle: 500
 
   thymeleaf:
     prefix: classpath:/templates/html/
@@ -44,3 +44,5 @@ mybatis:
   type-aliases-package: com.yidiandian.entity
 
 
+server:
+  port: 9098
