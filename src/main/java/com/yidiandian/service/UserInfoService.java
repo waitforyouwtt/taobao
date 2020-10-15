@@ -29,5 +29,5 @@ public interface UserInfoService {
      * @param token
      * @return
      */
-    UserInfoView findUserInfo(String userId);
+    UserInfoView findUserInfo(String token);
 }

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yidiandian.dao.ScenicSpotDetailsDao">
+
+    <resultMap id="BaseResultMap" type="com.yidiandian.entity.ScenicSpotDetails">
+        <!--@Table scenic_spot_details-->
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="scenicSpotInfoId" column="scenic_spot_info_id" jdbcType="INTEGER"/>
+        <result property="title" column="title" jdbcType="VARCHAR"/>
+        <result property="story" column="story" jdbcType="VARCHAR"/>
+        <result property="mainImage" column="main_image" jdbcType="VARCHAR"/>
+        <result property="locationName" column="location_name" jdbcType="VARCHAR"/>
+        <result property="locationLatitude" column="location_latitude" jdbcType="VARCHAR"/>
+        <result property="locationLongitude" column="location_longitude" jdbcType="VARCHAR"/>
+        <result property="userId" column="user_id" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="BaseResultMap">
+        select
+          id, scenic_spot_info_id, title, story, main_image, location_name, location_latitude, location_longitude, user_id, create_time, update_time
+        from Travel.scenic_spot_details
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="BaseResultMap">
+        select
+          id, scenic_spot_info_id, title, story, main_image, location_name, location_latitude, location_longitude, user_id, create_time, update_time
+        from Travel.scenic_spot_details
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="BaseResultMap">
+        select
+          id, scenic_spot_info_id, title, story, main_image, location_name, location_latitude, location_longitude, user_id, create_time, update_time
+        from Travel.scenic_spot_details
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="scenicSpotInfoId != null">
+                and scenic_spot_info_id = #{scenicSpotInfoId}
+            </if>
+            <if test="title != null and title != ''">
+                and title = #{title}
+            </if>
+            <if test="story != null and story != ''">
+                and story = #{story}
+            </if>
+            <if test="mainImage != null and mainImage != ''">
+                and main_image = #{mainImage}
+            </if>
+            <if test="locationName != null and locationName != ''">
+                and location_name = #{locationName}
+            </if>
+            <if test="locationLatitude != null and locationLatitude != ''">
+                and location_latitude = #{locationLatitude}
+            </if>
+            <if test="locationLongitude != null and locationLongitude != ''">
+                and location_longitude = #{locationLongitude}
+            </if>
+            <if test="userId != null and userId != ''">
+                and user_id = #{userId}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into Travel.scenic_spot_details(scenic_spot_info_id, title, story, main_image, location_name, location_latitude, location_longitude, user_id, create_time, update_time)
+        values (#{scenicSpotInfoId}, #{title}, #{story}, #{mainImage}, #{locationName}, #{locationLatitude}, #{locationLongitude}, #{userId}, now(), now())
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update Travel.scenic_spot_details
+        <set>
+            <if test="scenicSpotInfoId != null">
+                scenic_spot_info_id = #{scenicSpotInfoId},
+            </if>
+            <if test="title != null and title != ''">
+                title = #{title},
+            </if>
+            <if test="story != null and story != ''">
+                story = #{story},
+            </if>
+            <if test="mainImage != null and mainImage != ''">
+                main_image = #{mainImage},
+            </if>
+            <if test="locationName != null and locationName != ''">
+                location_name = #{locationName},
+            </if>
+            <if test="locationLatitude != null and locationLatitude != ''">
+                location_latitude = #{locationLatitude},
+            </if>
+            <if test="locationLongitude != null and locationLongitude != ''">
+                location_longitude = #{locationLongitude},
+            </if>
+            <if test="userId != null and userId != ''">
+                user_id = #{userId},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = now(),
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from Travel.scenic_spot_details where id = #{id}
+    </delete>
+
+</mapper>
