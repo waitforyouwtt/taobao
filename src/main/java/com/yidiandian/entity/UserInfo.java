@@ -1,47 +1,61 @@
 package com.yidiandian.entity;
 
-import lombok.*;
+import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.*;
+import java.util.Date;
+import java.io.Serializable;
+
 /**
- * @Author: 凤凰[小哥哥]
- * @Date: 2019/8/5 22:33
- * @Email: 15290810931@163.com
+ * 用户信息表(UserInfo)实体类
+ *
+ * @author makejava
+ * @since 2020-10-15 09:43:17
  */
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
+
 @Data
-@Entity
-@Builder
-@Table(name ="tb_user_info")
-@org.hibernate.annotations.Table(appliesTo = "tb_user_info",comment="用户表")
-public class UserInfo {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class UserInfo implements Serializable {
+    private static final long serialVersionUID = -44439829619031273L;
+    
     private Integer id;
-
-    @Basic
-    @Column(name = "user_name",columnDefinition="varchar(50) COMMENT '用户名'")
+    /**
+    * 用户id
+    */
+    private String userId;
+    /**
+    * 用户姓名
+    */
     private String userName;
-
-    @Basic
-    @Column(name = "nick_name",columnDefinition="varchar(50) COMMENT '用户昵称'")
-    private String nickName;
-
-    @Basic
-    @Column(name = "password",columnDefinition="varchar(200) COMMENT '用户密码'")
+    /**
+    * 用户昵称
+    */
+    private String userNick;
+    /**
+    * 用户密码
+    */
     private String password;
-
-    @Basic
-    @Column(name = "age",columnDefinition="int(11) COMMENT '用户年龄'")
-    private Integer age;
-
-    @Basic
-    @Column(name = "address",columnDefinition="varchar(200) COMMENT '用户地址'")
-    private String address;
-
+    /**
+    * 用户性别：0 男 1 女 2保密
+    */
+    private Integer gender;
+    /**
+    * 用户头像
+    */
+    private String headImage;
+    /**
+    * 用户手机号
+    */
+    private String phone;
+    /**
+    * 用户状态：0 正常 1 禁用
+    */
+    private Integer status;
+    /**
+    * 创建时间
+    */
+    private Date createTime;
+    /**
+    * 修改时间
+    */
+    private Date updateTime;
 
 }
