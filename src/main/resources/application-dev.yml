@@ -47,3 +47,8 @@ mybatis:
 
 server:
   port: 9098
+
+logging:
+  file: log/Travel-dev.log
+  level:
+    com.yidiandian.dao: debug
