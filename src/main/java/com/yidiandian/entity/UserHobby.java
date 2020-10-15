@@ -1,7 +1,7 @@
 package com.yidiandian.entity;
 
+import com.yidiandian.enums.HobbyEnum;
 import lombok.Data;
-
 import java.util.Date;
 import java.io.Serializable;
 
@@ -25,7 +25,8 @@ public class UserHobby implements Serializable {
     /**
     * 用户爱好
     */
-    private String hobby;
+    private Integer hobby;
+    private String hobbyDesc;
     /**
     * 创建时间
     */
@@ -35,4 +36,11 @@ public class UserHobby implements Serializable {
     */
     private Date updateTime;
 
+    public void setHobbyDesc() {
+        this.hobbyDesc = HobbyEnum.fromValue(hobby).getMsg();
+    }
+
+    public String getHobbyDesc() {
+        return hobbyDesc = HobbyEnum.fromValue(hobby).getMsg();
+    }
 }

@@ -18,11 +18,11 @@
     </resultMap>
 
     <!--查询单个-->
-    <select id="queryById" resultMap="BaseResultMap">
+    <select id="queryByUserId" resultMap="BaseResultMap">
         select
           id, user_id, user_name, user_nick, password, gender, head_image, phone, status, create_time, update_time
         from Travel.user_info
-        where id = #{id}
+        where user_id = #{userId}
     </select>
 
     <!--查询指定行数据-->
@@ -123,5 +123,14 @@
     <delete id="deleteById">
         delete from Travel.user_info where id = #{id}
     </delete>
+
+    <select id="findUserInfoByName" resultMap="BaseResultMap">
+    select
+    id, user_id, user_name, user_nick, password, gender, head_image, phone, status, create_time, update_time
+    from Travel.user_info
+    <where>
+        and concat(user_name,user_nick,phone) LIKE CONCAT ('%',#{name},'%')
+    </where>
+    </select>
 
 </mapper>

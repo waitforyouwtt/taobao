@@ -1,6 +1,5 @@
 package com.yidiandian.controller;
 
-import com.yidiandian.entity.Categories;
 import com.yidiandian.service.CategoriesService;
 import com.yidiandian.view.CategoriesView;
 import lombok.extern.slf4j.Slf4j;

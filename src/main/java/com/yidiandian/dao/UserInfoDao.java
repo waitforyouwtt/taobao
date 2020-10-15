@@ -1,7 +1,7 @@
 package com.yidiandian.dao;
 
 import com.yidiandian.entity.UserInfo;
-import com.yidiandian.entity.UserInfo;
+import com.yidiandian.view.UserInfoView;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
@@ -18,10 +18,10 @@ public interface UserInfoDao {
     /**
      * 通过ID查询单条数据
      *
-     * @param id 主键
+     * @param userId 主键
      * @return 实例对象
      */
-    UserInfo queryById(Integer id);
+    UserInfo queryByUserId(String userId);
 
     /**
      * 查询指定行数据
@@ -64,5 +64,13 @@ public interface UserInfoDao {
      * @return 影响行数
      */
     int deleteById(Integer id);
+
+    /**
+     * 通过用户名查询用户信息请求参数
+     * @param name
+     * @return
+     */
+    UserInfo findUserInfoByName(String name);
+
 
 }
