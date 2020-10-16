@@ -1,29 +1,49 @@
 package com.yidiandian.controller;
 
 import com.yidiandian.service.ScenicSpotInfoService;
+import com.yidiandian.view.ScenicSpotInfoView;
+import com.yidiandian.vo.QueryScenicSpotVO;
 import com.yidiandian.vo.ScenicSpotInfoVO;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.support.HttpRequestHandlerServlet;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.Enumeration;
+import java.util.List;
 
 /**
  * @author 凤凰小哥哥
  * @date 2020-10-15
  */
-@RestController
+@Controller
 @RequestMapping("/ScenicSpotInfo")
 public class ScenicSpotInfoController {
 
     @Autowired
     ScenicSpotInfoService scenicSpotInfoService;
 
+    @ApiOperation(value = "用户前往发表动态页面",notes = "=动态信息")
+    @GetMapping("/toPublishMessage")
+    public String topublishMessage(){
+        return "/toPublishMessage";
+    }
+
     @ApiOperation(value = "用户发表动态",notes = "=动态信息")
     @PostMapping("/publishMessage")
-    public String publishMessage(@RequestBody ScenicSpotInfoVO vo){
-        int i = scenicSpotInfoService.publishMessage(vo);
+    public String publishMessage(@ModelAttribute  ScenicSpotInfoVO vo, @RequestParam("file") MultipartFile[] file){
+         int i = scenicSpotInfoService.publishMessage(vo);
+        return "success";
+    }
+
+    @ApiOperation(value = "查看用户发表的动态",notes = "=动态信息")
+    @PostMapping("/findSpotInfo")
+    public String findSpotInfo(@RequestBody QueryScenicSpotVO spotVO){
+        List<ScenicSpotInfoView> viewList = scenicSpotInfoService.findSpotInfo(spotVO);
         return "success";
     }
 }

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <form action="/ScenicSpotInfo/publishMessage" method="post" enctype="multipart/form-data">
+        <table border="1">
+            <tr>
+                <td>景点名称：</td>
+                <td><input type="text" name="scenicSpotName"/></td>
+            </tr>
+            <tr>
+                <td>景点描述：</td>
+                <td><input type="text" name="scenicSpotDescribe"/></td>
+            </tr>
+            <tr>
+                <td>所在省份：</td>
+                <td><input type="text" name="provinceCode"/></td>
+            </tr>
+            <tr>
+                <td>所在城市：</td>
+                <td><input type="text" name="cityCode"/></td>
+            </tr>
+            <tr>
+                <td>AAAAA景点：</td>
+                <td><input type="text" name="starLevel"/></td>
+            </tr>
+            <tr>
+                <td>热度：</td>
+                <td><input type="text" name="hotLevel"/></td>
+            </tr>
+            <tr>
+                <td>标题：</td>
+                <td><input type="text" name="title"/></td>
+            </tr>
+            <tr>
+                <td>故事：</td>
+                <td><input type="text" name="story"/></td>
+            </tr>
+            <tr>
+                <td>经度：</td>
+                <td><input type="text" name="locationLatitude"/></td>
+            </tr>
+            <tr>
+                <td>纬度：</td>
+                <td><input type="text" name="locationLongitude"/></td>
+            </tr>
+            <tr>
+                <td>上传主图：</td>
+                <td>
+                    <input id="main" type="file" name="main" />
+                </td>
+            </tr>
+            <tr>
+                <td>上传图片：</td>
+                <td>
+                    <input id="file" type="file" multiple/>
+                </td>
+            </tr>
+
+        </table>
+        <input type="button" value="上传" id="publish" class="publish"/><br>
+    </form>
+</center>
+</body>
+</html>
+<script src="../js/index/jquery_1.9.js"></script>
+<script src="../js/index/main.js"></script>
+<script type="text/javascript">
+    /*$(function () {
+        $(".upload").click(function () {//点击事件--》上传图片
+            //alert("1");
+            //获取表单对象
+            var form = new FormData();
+            //接受表单第一个上传的数据，file命名不能和form里面的名字重复，为传到.java页面的值
+            //form.append("file",);
+            var images = $('input[name="sfile1"]').val();
+            alert("得到的数据："+images);
+            form.append("files", images);
+            $.ajax({
+                url: "/upload",//后台url
+                type: "POST",//类型为post或get
+                dataType: 'json',//数据返回类型，可以使xml，json等
+                data: form,
+                cache: false,
+                async: false,
+                processData: false,
+                contentType: false,
+                success:function (data) {//接受.java页面的参数
+                    if (data){
+                        var pic = "/img/"+data.fileName;
+                        $("#pic").val("/img/"+data.fileName);
+                        $("#url img").attr("src",pic);//attr() 方法设置或返回被选元素的属性值。
+                    }else {
+                        alert("失败");
+                    }
+                }
+            })
+        })
+    })*/
+
+    $(function () {
+        //获取上传图片的长度
+        var length;
+        $("#file").change(function () {
+            length = this.files.length;
+            console.log(length);
+        });
+
+        //上传图片点击事件
+        $(".publish").click(function () {
+            var formData = new FormData();
+            var arr= new Array();
+            var container;
+            var i=0;
+
+            formData.append('scenicSpotName', $("input[name='scenicSpotName']").val());
+            formData.append('scenicSpotDescribe', $("input[name='scenicSpotDescribe']").val());
+            formData.append('provinceCode', $("input[name='provinceCode']").val());
+            formData.append('cityCode', $("input[name='cityCode']").val());
+            formData.append('starLevel', $("input[name='starLevel']").val());
+            formData.append('hotLevel', $("input[name='hotLevel']").val());
+            formData.append('title', $("input[name='title']").val());
+            formData.append('story', $("input[name='story']").val());
+            formData.append('locationLatitude', $("input[name='locationLatitude']").val());
+            formData.append('locationLongitude', $("input[name='locationLongitude']").val());
+            formData.append('main', document.getElementById("main").files[0]);
+            for(let i=0;i< length;i++){
+                formData.append('files', $('#file')[0].files[i]);
+                console.log(formData.get("files"));
+            }
+            container=formData.getAll("files");
+            for (var item in container) {
+                arr[i] = container[item];
+                i++;
+            }
+            console.log(arr);
+            $.ajax({
+                url: '/ScenicSpotInfo/publishMessage',
+                type: 'POST',
+                dataType:"json",
+                cache: false,
+                data: formData,
+                processData: false,
+                contentType: false,
+                success:(function(data) {
+                    window.confirm(data.code)
+                }),
+                error:(function(res) {
+                    alert("失败");
+                })
+            })
+        });
+    });
+</script>
