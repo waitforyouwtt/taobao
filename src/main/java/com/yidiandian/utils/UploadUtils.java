@@ -1,8 +1,6 @@
 package com.yidiandian.utils;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.Random;
@@ -50,8 +48,6 @@ public class UploadUtils {
         }
         //保存t_upload_file表中的地址
         String filePathNew = SON_PATH + fileName;
-        /*String profilePhoto = saveUploadFile(filePathNew);
-        return profilePhoto;*/
         return filePathNew;
     }
 

@@ -7,13 +7,7 @@ import com.yidiandian.vo.ScenicSpotInfoVO;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.support.HttpRequestHandlerServlet;
-import org.springframework.web.multipart.MultipartFile;
-
-import javax.servlet.http.HttpServletRequest;
-import java.util.Enumeration;
 import java.util.List;
 
 /**
@@ -35,7 +29,7 @@ public class ScenicSpotInfoController {
 
     @ApiOperation(value = "用户发表动态",notes = "=动态信息")
     @PostMapping("/publishMessage")
-    public String publishMessage(@ModelAttribute  ScenicSpotInfoVO vo, @RequestParam("file") MultipartFile[] file){
+    public String publishMessage(@ModelAttribute  ScenicSpotInfoVO vo){
          int i = scenicSpotInfoService.publishMessage(vo);
         return "success";
     }

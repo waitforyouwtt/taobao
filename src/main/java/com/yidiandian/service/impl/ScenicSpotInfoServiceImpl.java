@@ -19,9 +19,8 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.io.Serializable;
+import java.util.*;
 
 /**
  * 景点景区表(ScenicSpotInfo)表服务实现类
@@ -78,16 +77,15 @@ public class ScenicSpotInfoServiceImpl implements ScenicSpotInfoService {
         ScenicSpotInfo scenicSpotInfo = structureScenicSpotInfo(scenicSpotInfoVO, userId);
         int resultOrder = this.scenicSpotInfoDao.insert(scenicSpotInfo);
         if (resultOrder > 0){
-            String filePath =  UploadUtils.upload(scenicSpotInfoVO.getMain());
-            scenicSpotInfoVO.setMainImage(filePath);
-            int insertScenicSpotDetails = scenicSpotDetailsService.insertScenicSpotDetails(scenicSpotInfoVO, userId, scenicSpotInfo.getId());
+            scenicSpotInfoVO.setMainImage(uploadServer(scenicSpotInfoVO).get("mainPath").get(0));
+            scenicSpotDetailsService.insertScenicSpotDetails(scenicSpotInfoVO, userId, scenicSpotInfo.getId());
             //上传服务器
-            List<String> images = uploadServer(scenicSpotInfoVO);
+            List<String> images = uploadServer(scenicSpotInfoVO).get("imagesPath");
             if (CollectionUtils.isEmpty(images)){
                 log.info("没有上传图片......");
             }else{
                 structureScenicSpotInfoUpload(scenicSpotInfoVO,images, scenicSpotInfoVO.getUserId(),scenicSpotInfo.getId());
-                int insertScenicSpotImages = scenicSpotImagesService.insertScenicSpotImages(scenicSpotInfoVO, userId, scenicSpotInfo.getId());
+                scenicSpotImagesService.insertScenicSpotImages(scenicSpotInfoVO, userId, scenicSpotInfo.getId());
             }
         }
         return resultOrder > 0 ? 1 : 0;
@@ -107,17 +105,25 @@ public class ScenicSpotInfoServiceImpl implements ScenicSpotInfoService {
         vo.setImagesList(imagesList);
     }
 
-    private List<String> uploadServer(ScenicSpotInfoVO scenicSpotInfoVO){
-        List<String> filePaths = new ArrayList<>();
-        if (scenicSpotInfoVO.getFiles() == null){
-            log.info("没有图片需要上传... ...");
-            return new ArrayList<>();
+    private Map<String,List<String>> uploadServer(ScenicSpotInfoVO scenicSpotInfoVO){
+        Map<String,List<String>> hashMap = new HashMap<>(16);
+        if (scenicSpotInfoVO.getMain() == null && scenicSpotInfoVO.getFiles() == null){
+            return hashMap;
         }
-        for(MultipartFile file : scenicSpotInfoVO.getFiles()){
-          String filePath =  UploadUtils.upload(file);
-          filePaths.add(filePath);
+
+        if (scenicSpotInfoVO.getMain() != null){
+            hashMap.put("mainPath",Arrays.asList(UploadUtils.upload(scenicSpotInfoVO.getMain())));
         }
-        return filePaths;
+
+        if (scenicSpotInfoVO.getFiles() != null){
+            List<String> filePaths = new ArrayList<>();
+            for(MultipartFile file : scenicSpotInfoVO.getFiles()){
+                String filePath =  UploadUtils.upload(file);
+                filePaths.add(filePath);
+            }
+            hashMap.put("imagesPath",filePaths);
+        }
+        return hashMap;
     }
 
     private ScenicSpotInfo  structureScenicSpotInfo(ScenicSpotInfoVO vo,String userId){
