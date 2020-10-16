@@ -15,16 +15,17 @@ import java.util.List;
  * @date 2020-10-15
  */
 @Controller
-@RequestMapping("/ScenicSpotInfo")
+//@RequestMapping("/ScenicSpotInfo")
+@RequestMapping("/backstage")
 public class ScenicSpotInfoController {
 
     @Autowired
     ScenicSpotInfoService scenicSpotInfoService;
 
-    @ApiOperation(value = "用户前往发表动态页面",notes = "=动态信息")
-    @GetMapping("/toPublishMessage")
+    @ApiOperation(value = "后台发布景点景区前往动态页面",notes = "=动态信息")
+    @GetMapping("/backstagePublishMessage")
     public String topublishMessage(){
-        return "/toPublishMessage";
+        return "backstagePublishMessage";
     }
 
     @ApiOperation(value = "用户发表动态",notes = "=动态信息")

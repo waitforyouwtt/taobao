@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yidiandian.dao.DistrictDao">
+
+    <resultMap id="BaseResultMap" type="com.yidiandian.entity.District">
+        <!--@Table district-->
+        <result property="id" column="id" jdbcType="OTHER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="level" column="level" jdbcType="OTHER"/>
+        <result property="upid" column="upid" jdbcType="OTHER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="BaseResultMap">
+        select
+          id, name, level, upid
+        from Travel.district
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="BaseResultMap">
+        select
+          id, name, level, upid
+        from Travel.district
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="BaseResultMap">
+        select
+          id, name, level, upid
+        from Travel.district
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="upid != null">
+                and upid = #{upid}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into Travel.district(name, level, upid)
+        values (#{name}, #{level}, #{upid})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update Travel.district
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="level != null">
+                level = #{level},
+            </if>
+            <if test="upid != null">
+                upid = #{upid},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from Travel.district where id = #{id}
+    </delete>
+
+    <select id="findBbsAreaByUPid" resultMap="BaseResultMap">
+        select
+        id, name, level, upid
+        from Travel.district
+        <where>
+            <if test="upid != null">
+                and upid = #{upid}
+            </if>
+        </where>
+    </select>
+
+</mapper>
