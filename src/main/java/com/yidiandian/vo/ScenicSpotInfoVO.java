@@ -2,6 +2,7 @@ package com.yidiandian.vo;
 
 import com.yidiandian.entity.ScenicSpotImages;
 import lombok.Data;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.Serializable;
 import java.util.List;
@@ -12,6 +13,11 @@ import java.util.List;
  */
 @Data
 public class ScenicSpotInfoVO implements Serializable {
+
+    /**
+     * 发布景点动态关联主键
+     */
+    private int scenicSpotInfoId;
 
     /**
      * 景点名称
@@ -69,4 +75,13 @@ public class ScenicSpotInfoVO implements Serializable {
 
     List<ScenicSpotImages> imagesList;
 
+    /**
+     * 主图地址
+     */
+    MultipartFile main;
+
+    /**
+     * 附图
+     */
+    MultipartFile[] files;
 }

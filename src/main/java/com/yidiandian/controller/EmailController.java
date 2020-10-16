@@ -33,7 +33,7 @@ public class EmailController {
         return "true";
     }
 
-    //发送文本消息，不带附件
+    //发送文本消息，带附件
     @PostMapping("/enclosure-send")
     public String enclosureSend(@ModelAttribute EmailView vo,HttpServletRequest request){
         emailService.enclosureSend(vo);

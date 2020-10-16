@@ -1,6 +1,8 @@
 package com.yidiandian.service;
 
 import com.yidiandian.entity.ScenicSpotInfo;
+import com.yidiandian.view.ScenicSpotInfoView;
+import com.yidiandian.vo.QueryScenicSpotVO;
 import com.yidiandian.vo.ScenicSpotInfoVO;
 
 import java.util.List;
@@ -54,4 +56,10 @@ public interface ScenicSpotInfoService {
      */
     boolean deleteById(Integer id);
 
+    /**
+     * 查看用户发表的动态
+     * @param spotVO
+     * @return
+     */
+    List<ScenicSpotInfoView> findSpotInfo(QueryScenicSpotVO spotVO);
 }

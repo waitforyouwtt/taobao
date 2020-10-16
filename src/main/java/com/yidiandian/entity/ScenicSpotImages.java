@@ -23,41 +23,9 @@ public class ScenicSpotImages implements Serializable {
     */
     private Integer scenicSpotInfoId;
     /**
-    * 主图
+    * 图片
     */
-    private String mainImage;
-    /**
-    * 附图1
-    */
-    private String image1;
-    /**
-    * 附图2
-    */
-    private String image2;
-    /**
-    * 附图3
-    */
-    private String image3;
-    /**
-    * 附图4
-    */
-    private String image4;
-    /**
-    * 附图5
-    */
-    private String image5;
-    /**
-    * 附图6
-    */
-    private String image6;
-    /**
-    * 附图7
-    */
-    private String image7;
-    /**
-    * 附图8
-    */
-    private String image8;
+    private String image;
     /**
     * 用户id
     */

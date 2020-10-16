@@ -4,7 +4,6 @@ import com.yidiandian.entity.ScenicSpotImages;
 import com.yidiandian.dao.ScenicSpotImagesDao;
 import com.yidiandian.service.ScenicSpotImagesService;
 import com.yidiandian.vo.ScenicSpotInfoVO;
-import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
@@ -64,15 +63,7 @@ public class ScenicSpotImagesServiceImpl implements ScenicSpotImagesService {
         vo.getImagesList().stream().forEach(o ->{
             ScenicSpotImages model = new ScenicSpotImages();
             model.setScenicSpotInfoId(resultOrder);
-            model.setMainImage(o.getMainImage());
-            model.setImage1(o.getImage1());
-            model.setImage2(o.getImage2());
-            model.setImage3(o.getImage3());
-            model.setImage4(o.getImage4());
-            model.setImage5(o.getImage5());
-            model.setImage6(o.getImage6());
-            model.setImage7(o.getImage7());
-            model.setImage8(o.getImage8());
+            model.setImage(o.getImage());
             model.setUserId(userId);
             images.add(model);
         });
