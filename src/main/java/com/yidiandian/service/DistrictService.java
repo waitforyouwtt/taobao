@@ -2,7 +2,6 @@ package com.yidiandian.service;
 
 import com.yidiandian.entity.District;
 import com.yidiandian.view.DistrictView;
-import io.swagger.models.auth.In;
 
 import java.util.List;
 
@@ -57,5 +56,10 @@ public interface DistrictService {
      */
     boolean deleteById(Object id);
 
+    /**
+     * 根据父级id 查询省市区
+     * @param upid
+     * @return
+     */
     List<DistrictView> findBbsAreaByUPid(Integer upid);
 }

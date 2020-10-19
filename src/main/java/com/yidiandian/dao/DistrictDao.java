@@ -2,6 +2,7 @@ package com.yidiandian.dao;
 
 import com.yidiandian.entity.District;
 import com.yidiandian.view.DistrictView;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import java.util.List;
  * @author makejava
  * @since 2020-10-16 18:36:33
  */
+@Mapper
 public interface DistrictDao {
 
     /**
@@ -65,6 +67,11 @@ public interface DistrictDao {
      */
     int deleteById(Object id);
 
-    List<DistrictView> findBbsAreaByUPid(District district);
+    /**
+     * 根据父级id 查询省市区
+     * @param upid
+     * @return
+     */
+    List<DistrictView> findBbsAreaByUPid(@Param("upid") int upid);
 
 }

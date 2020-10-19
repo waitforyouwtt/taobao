@@ -5,6 +5,8 @@ import com.yidiandian.entity.District;
 import com.yidiandian.dao.DistrictDao;
 import com.yidiandian.service.DistrictService;
 import com.yidiandian.view.DistrictView;
+import org.apache.commons.beanutils.BeanComparator;
+import org.apache.commons.collections4.comparators.FixedOrderComparator;
 import org.springframework.util.StringUtils;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +23,7 @@ import java.util.List;
  * @author makejava
  * @since 2020-10-16 18:36:33
  */
-@Service("districtService")
+@Service
 public class DistrictServiceImpl implements DistrictService {
     @Resource
     private DistrictDao districtDao;
@@ -87,16 +89,13 @@ public class DistrictServiceImpl implements DistrictService {
     @Override
     public List<DistrictView> findBbsAreaByUPid(Integer upid) {
         List<DistrictView> bbsAreaViewList = new ArrayList<>();
-        District vo = new District();
-        vo.setUpid(upid);
         if (StringUtils.isEmpty( upid ) || upid == 0) {
             upid = 0;
-            vo.setUpid(upid);
-            bbsAreaViewList = districtDao.findBbsAreaByUPid(vo);
-
-           // Collections.sort(bbsAreaViewList, new BeanComparator<DistrictView>("areaId", new FixedOrderComparator( DistrictConstants.sortList() )));
+            bbsAreaViewList = districtDao.findBbsAreaByUPid(upid);
+            //按照指定的顺序排序
+            Collections.sort(bbsAreaViewList, new BeanComparator<DistrictView>("id", new FixedOrderComparator( DistrictConstants.sortList() )));
             return bbsAreaViewList;
         }
-        return districtDao.findBbsAreaByUPid( vo);
+        return districtDao.findBbsAreaByUPid( upid);
     }
 }
