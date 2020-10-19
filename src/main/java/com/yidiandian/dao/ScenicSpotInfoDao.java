@@ -64,4 +64,11 @@ public interface ScenicSpotInfoDao {
      */
     int deleteById(Integer id);
 
+    /**
+     *  通过scenicSpotName模糊匹配
+      * @param scenicSpotName
+     * @return
+     */
+    ScenicSpotInfo findAllByScenicSpotName(@Param("scenicSpotName") String scenicSpotName);
+
 }

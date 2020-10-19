@@ -2,6 +2,7 @@ package com.yidiandian.entity;
 
 import lombok.Data;
 
+import javax.validation.constraints.NotBlank;
 import java.util.Date;
 import java.io.Serializable;
 
@@ -24,6 +25,7 @@ public class UserInfo implements Serializable {
     /**
     * 用户姓名
     */
+    @NotBlank(message = "用户名不能为空")
     private String userName;
     /**
     * 用户昵称

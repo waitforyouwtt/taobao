@@ -32,7 +32,7 @@
 
 
 "发布动态":{
-  "cityCode": "110100",
+  "cityCode": "310101",
   "hotLevel": "5",
   "imagesList": [
     {
@@ -56,7 +56,7 @@
   "locationLongitude": "200",
   "locationName": "上海外滩",
   "mainImage": "www.main.com.jpg",
-  "provinceCode": "110100",
+  "provinceCode": "310100",
   "scenicSpotDescribe": "上海外滩是民国初年的杜月笙建立的，时有国际之魔都的称号",
   "scenicSpotName": "上海外滩",
   "starLevel": "5",

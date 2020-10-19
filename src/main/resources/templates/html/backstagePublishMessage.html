@@ -18,11 +18,19 @@
             </tr>
             <tr>
                 <td>所在省份：</td>
-                <td><input type="text" name="provinceCode" class="provinceCode"/></td>
+                <td>
+                    <select id="provinceCode" class="provinceCode" name="provinceCode">
+                        <option value="-1" >--请选择--</option>
+                    </select>
+                </td>
             </tr>
             <tr>
                 <td>所在城市：</td>
-                <td><input type="text" name="cityCode" class="cityCode"/></td>
+                <td>
+                    <select id="cityCode" class="cityCode" name="cityCode">
+                        <option value="-1">---请选择---</option>
+                    </select>
+                </td>
             </tr>
             <tr>
                 <td>AAAAA景点：</td>
@@ -73,6 +81,47 @@
 
     $(function () {
 
+        var provinceName="";
+        var cityName="";
+        var countryName="";
+
+        $.ajax({
+            url:"/findBbsAreaByUPid",
+            type:"post",
+            data:{
+                upid : 0
+            },
+            success:function(obj){
+                var data = obj.data;
+               // console.info("后台返回给前台的数据：{}",data)
+
+                for(var i in data){
+                    $("#provinceCode").append("<option value='"+data[i].id+"'>"+data[i].name+"</option>");
+                }
+            },
+            dataType:"json"
+        });
+
+        $("#provinceCode").change(function(){
+            //清空缓存
+            $("#cityCode option:not(:first)").remove();
+            var cityValue = $("#provinceCode option:selected").val();
+            $.ajax({
+                url:"/findBbsAreaByUPid",
+                type:"post",
+                data:{
+                    upid : cityValue
+                },
+                success:function(obj){
+                    var data = obj.data;
+                    //console.info("后台返回给前台的数据：{}",data);
+                    for(var i in data){
+                        $("#cityCode").append("<option value='"+data[i].id+"'>"+data[i].name+"</option>");
+                    }
+                },
+                dataType:"json"
+            })
+        });
 
 
         //获取上传图片的长度
@@ -89,10 +138,15 @@
             var container;
             var i=0;
 
+            var selectKey   = $('#provinceCode option:selected').text();
+            var selectValue = $('#provinceCode option:selected').val();
+            console.info("选择得到的key:",selectKey);
+            console.info("选择得到的value:",selectValue);
+
             formData.append('scenicSpotName', $("input[name='scenicSpotName']").val());
             formData.append('scenicSpotDescribe', $("input[name='scenicSpotDescribe']").val());
-            formData.append('provinceCode', $("input[name='provinceCode']").val());
-            formData.append('cityCode', $("input[name='cityCode']").val());
+            formData.append('provinceCode', $('#provinceCode option:selected').val());
+            formData.append('cityCode', $('#cityCode option:selected').val());
             formData.append('starLevel', $("input[name='starLevel']").val());
             formData.append('hotLevel', $("input[name='hotLevel']").val());
             formData.append('title', $("input[name='title']").val());
@@ -111,7 +165,7 @@
             }
             console.log(arr);
             $.ajax({
-                url: '/ScenicSpotInfo/publishMessage',
+                url: '/backstage/publishMessage',
                 type: 'POST',
                 dataType:"json",
                 cache: false,
@@ -119,10 +173,11 @@
                 processData: false,
                 contentType: false,
                 success:(function(data) {
-                    window.confirm(data.code)
+                    alert(data.data);
+                    console.info("后台返回给前台的数据：{}",data);
                 }),
                 error:(function(res) {
-                    alert("失败");
+                    alert(res.message);
                 })
             })
         });

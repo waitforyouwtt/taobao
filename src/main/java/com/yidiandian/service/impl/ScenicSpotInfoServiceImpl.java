@@ -7,11 +7,14 @@ import com.yidiandian.dao.ScenicSpotInfoDao;
 import com.yidiandian.service.ScenicSpotDetailsService;
 import com.yidiandian.service.ScenicSpotImagesService;
 import com.yidiandian.service.ScenicSpotInfoService;
+import com.yidiandian.support.Result;
+import com.yidiandian.utils.PlatformUniqueCodeUtils;
 import com.yidiandian.utils.UploadUtils;
 import com.yidiandian.view.ScenicSpotInfoView;
 import com.yidiandian.vo.QueryScenicSpotVO;
 import com.yidiandian.vo.ScenicSpotInfoVO;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.stereotype.Service;
@@ -19,7 +22,6 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
-import java.io.Serializable;
 import java.util.*;
 
 /**
@@ -65,16 +67,23 @@ public class ScenicSpotInfoServiceImpl implements ScenicSpotInfoService {
     }
 
     /**
-     * 新增数据
      *
+     * 后台发布景点景区动态
      * @param scenicSpotInfoVO 实例对象
      * @return 实例对象
      */
     @Override
-    public int publishMessage(ScenicSpotInfoVO scenicSpotInfoVO) {
-        log.info("用户发布动态请求参数：{}", JSONUtil.parseObj(scenicSpotInfoVO));
+    public Result publishMessage(ScenicSpotInfoVO scenicSpotInfoVO) {
+        log.info("后台发布景点景区动态请求参数：{}", JSONUtil.parseObj(scenicSpotInfoVO));
         String userId = "McJLCxSF";
         ScenicSpotInfo scenicSpotInfo = structureScenicSpotInfo(scenicSpotInfoVO, userId);
+        //platform_unique_code
+        //校验：主表不能添加重复的数据，判断字段：scenicSpotName
+        ScenicSpotInfo allByScenicSpotName = this.scenicSpotInfoDao.findAllByScenicSpotName(scenicSpotInfoVO.getScenicSpotName());
+        if (allByScenicSpotName != null){
+            return Result.error("该景点在平台中已存在，请勿重复添加");
+        }
+
         int resultOrder = this.scenicSpotInfoDao.insert(scenicSpotInfo);
         if (resultOrder > 0){
             scenicSpotInfoVO.setMainImage(uploadServer(scenicSpotInfoVO).get("mainPath").get(0));
@@ -88,7 +97,7 @@ public class ScenicSpotInfoServiceImpl implements ScenicSpotInfoService {
                 scenicSpotImagesService.insertScenicSpotImages(scenicSpotInfoVO, userId, scenicSpotInfo.getId());
             }
         }
-        return resultOrder > 0 ? 1 : 0;
+        return resultOrder > 0 ? Result.success("操作成功") : Result.error("操作失败");
     }
 
     private void structureScenicSpotInfoUpload(ScenicSpotInfoVO vo, List<String> images, String userId,int id){
@@ -104,6 +113,7 @@ public class ScenicSpotInfoServiceImpl implements ScenicSpotInfoService {
         });
         vo.setImagesList(imagesList);
     }
+
 
     private Map<String,List<String>> uploadServer(ScenicSpotInfoVO scenicSpotInfoVO){
         Map<String,List<String>> hashMap = new HashMap<>(16);
@@ -130,6 +140,8 @@ public class ScenicSpotInfoServiceImpl implements ScenicSpotInfoService {
         ScenicSpotInfo model = new ScenicSpotInfo();
         BeanCopier beanCopier = BeanCopier.create(ScenicSpotInfoVO.class,ScenicSpotInfo.class,false);
         beanCopier.copy(vo,model,null);
+        String uniqueCode = PlatformUniqueCodeUtils.generatePlatformUniqueCode(vo.getProvinceCode(), vo.getCityCode());
+        model.setPlatformUniqueCode(uniqueCode);
         model.setUserId(userId);
         model.setStatus(0);
         model.setPulishStatus(0);

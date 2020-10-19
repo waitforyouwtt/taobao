@@ -1,6 +1,7 @@
 package com.yidiandian.service;
 
 import com.yidiandian.entity.ScenicSpotInfo;
+import com.yidiandian.support.Result;
 import com.yidiandian.view.ScenicSpotInfoView;
 import com.yidiandian.vo.QueryScenicSpotVO;
 import com.yidiandian.vo.ScenicSpotInfoVO;
@@ -33,12 +34,11 @@ public interface ScenicSpotInfoService {
     List<ScenicSpotInfo> queryAllByLimit(int offset, int limit);
 
     /**
-     * 新增数据
-     *
+     * 后台发布景点景区动态
      * @param scenicSpotInfoVO 实例对象
      * @return 实例对象
      */
-    int publishMessage(ScenicSpotInfoVO scenicSpotInfoVO);
+    Result publishMessage(ScenicSpotInfoVO scenicSpotInfoVO);
 
     /**
      * 修改数据

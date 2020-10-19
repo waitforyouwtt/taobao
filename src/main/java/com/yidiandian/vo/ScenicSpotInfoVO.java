@@ -15,6 +15,11 @@ import java.util.List;
 public class ScenicSpotInfoVO implements Serializable {
 
     /**
+     * 平台景点唯一码
+     */
+    private String platformUniqueCode;
+
+    /**
      * 发布景点动态关联主键
      */
     private int scenicSpotInfoId;

@@ -1,6 +1,7 @@
 package com.yidiandian.controller;
 
 import com.yidiandian.service.ScenicSpotInfoService;
+import com.yidiandian.support.Result;
 import com.yidiandian.view.ScenicSpotInfoView;
 import com.yidiandian.vo.QueryScenicSpotVO;
 import com.yidiandian.vo.ScenicSpotInfoVO;
@@ -15,7 +16,6 @@ import java.util.List;
  * @date 2020-10-15
  */
 @Controller
-//@RequestMapping("/ScenicSpotInfo")
 @RequestMapping("/backstage")
 public class ScenicSpotInfoController {
 
@@ -25,14 +25,14 @@ public class ScenicSpotInfoController {
     @ApiOperation(value = "后台发布景点景区前往动态页面",notes = "=动态信息")
     @GetMapping("/backstagePublishMessage")
     public String topublishMessage(){
-        return "backstagePublishMessage";
+        return "/html/backstagePublishMessage";
     }
 
-    @ApiOperation(value = "用户发表动态",notes = "=动态信息")
+    @ApiOperation(value = "后台发布景点景区动态",notes = "=动态信息")
     @PostMapping("/publishMessage")
-    public String publishMessage(@ModelAttribute  ScenicSpotInfoVO vo){
-         int i = scenicSpotInfoService.publishMessage(vo);
-        return "success";
+    @ResponseBody
+    public Result publishMessage(@ModelAttribute  ScenicSpotInfoVO vo){
+        return scenicSpotInfoService.publishMessage(vo);
     }
 
     @ApiOperation(value = "查看用户发表的动态",notes = "=动态信息")

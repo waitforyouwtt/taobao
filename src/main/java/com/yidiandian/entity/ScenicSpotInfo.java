@@ -19,6 +19,10 @@ public class ScenicSpotInfo implements Serializable {
     */
     private Integer id;
     /**
+     * 平台景点唯一码
+     */
+    private String platformUniqueCode;
+    /**
     * 景点名称
     */
     private String scenicSpotName;
