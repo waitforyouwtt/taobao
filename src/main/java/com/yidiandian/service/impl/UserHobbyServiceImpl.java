@@ -3,6 +3,7 @@ package com.yidiandian.service.impl;
 import com.yidiandian.dao.UserHobbyDao;
 import com.yidiandian.entity.UserHobby;
 import com.yidiandian.service.UserHobbyService;
+import com.yidiandian.support.Result;
 import com.yidiandian.vo.UserInfoVO;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,15 @@ public class UserHobbyServiceImpl implements UserHobbyService {
         UserHobby vo = new UserHobby();
         vo.setUserId(userId);
         return userHobbyDao.queryAll(vo);
+    }
+
+    @Override
+    public int updateUserHobby(UserInfoVO userInfoVO) {
+        if (org.apache.commons.collections4.CollectionUtils.isEmpty(userInfoVO.getHobbyList())){
+            return 0;
+        }
+        userHobbyDao.deleteByUserId(userInfoVO.getUserId());
+        return userHobbyDao.batchInsertHobby(structureUserHobby(userInfoVO,userInfoVO.getUserId()));
     }
 
     private List<UserHobby> structureUserHobby(UserInfoVO userInfoVO, String userId){

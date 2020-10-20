@@ -82,6 +82,10 @@
         delete from Travel.user_hobby where id = #{id}
     </delete>
 
+    <delete id="deleteByUserId">
+        delete from Travel.user_hobby where user_id = #{userId}
+    </delete>
+
     <!--选择爱好落库-->
     <insert id="batchInsertHobby" parameterType="list">
         insert into Travel.user_hobby(user_id,hobby,create_time,update_time)values

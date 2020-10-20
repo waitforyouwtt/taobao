@@ -26,5 +26,5 @@ public interface UserInfoDetailsService {
      * @param userInfoVO
      * @return
      */
-    Result updateUserDetails(UserInfoVO userInfoVO);
+    int updateUserDetails(UserInfoVO userInfoVO);
 }

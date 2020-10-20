@@ -33,7 +33,7 @@ public interface UserInfoService {
     Result findUserInfo(String token);
 
     /**
-     * 修改用户信息
+     * 用户修改自己的个人信息
      * @param userInfoVO
      * @return
      */

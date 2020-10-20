@@ -64,6 +64,9 @@ public interface UserHobbyDao {
      */
     int deleteById(Integer id);
 
+    int deleteByUserId(@Param("userId") String userId);
+
+
     /**
      * 选择爱好落库
      * @param batchEntities

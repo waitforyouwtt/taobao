@@ -69,11 +69,15 @@ public class UserInfoDetailsServiceImpl implements UserInfoDetailsService {
     }
 
     @Override
-    public Result updateUserDetails(UserInfoVO userInfoVO) {
-        UserInfoDetails details = new UserInfoDetails();
-        details.setUserId(userInfoVO.getUserId());
-        details.setEmailStatus(EmailStatusEnum.BIND.getCode());
-        return Result.success(userInfoDetailsDao.update(details));
+    public int updateUserDetails(UserInfoVO userInfoVO) {
+        return userInfoDetailsDao.update(structureUpdate(userInfoVO));
+    }
+
+    private UserInfoDetails structureUpdate(UserInfoVO vo){
+        UserInfoDetails info = new UserInfoDetails();
+        BeanCopier beanCopier = BeanCopier.create(UserInfoVO.class,UserInfoDetails.class,false );
+        beanCopier.copy(vo,info,null);
+        return info;
     }
 
 

@@ -81,7 +81,18 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Override
     public Result updateUserInfo(UserInfoVO userInfoVO) {
-        return null;
+        int updateUser = userInfoDao.update(structureUpdate(userInfoVO));
+        int updateDetail = userInfoDetailsService.updateUserDetails(userInfoVO);
+        int updateHobby = userHobbyService.updateUserHobby(userInfoVO);
+        return (updateUser >0 || updateDetail > 0 || updateHobby > 0 ) ? Result.success("操作成功") : Result.error();
+    }
+
+    private UserInfo structureUpdate(UserInfoVO vo){
+        UserInfo info = new UserInfo();
+        BeanCopier beanCopier = BeanCopier.create(UserInfoVO.class,UserInfo.class,false);
+        beanCopier.copy(vo,info,null);
+        info.setUserName(null);
+        return info;
     }
 
     private UserInfoView structureUserInfoView(String userId){

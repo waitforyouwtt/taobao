@@ -1,6 +1,7 @@
 package com.yidiandian.service;
 
 import com.yidiandian.entity.UserHobby;
+import com.yidiandian.support.Result;
 import com.yidiandian.vo.UserInfoVO;
 import java.util.List;
 
@@ -22,4 +23,11 @@ public interface UserHobbyService {
      * @return
      */
     List<UserHobby> findUserHobbyListByUserId(String userId);
+
+    /**
+     * 修改用户爱好
+     * @param userInfoVO
+     * @return
+     */
+    int updateUserHobby(UserInfoVO userInfoVO);
 }

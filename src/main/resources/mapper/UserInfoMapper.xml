@@ -116,7 +116,7 @@
                 update_time = now(),
             </if>
         </set>
-        where id = #{id}
+        where user_id = #{userId}
     </update>
 
     <!--通过主键删除-->

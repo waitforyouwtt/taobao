@@ -914,3 +914,100 @@
 2020-10-20 16:36:33.164  INFO 43084 --- [Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2020-10-20 16:36:33.169  INFO 43084 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2020-10-20 16:36:33.177  INFO 43084 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-10-20 18:29:35.774  INFO 44451 --- [main] com.yidiandian.TaobaoApplication         : Starting TaobaoApplication on FarbendeMacBook-Pro.local with PID 44451 (/Users/farben/Documents/IdeaProjects/ydd/taobao/target/classes started by farben in /Users/farben/Documents/IdeaProjects/ydd/taobao)
+2020-10-20 18:29:35.777  INFO 44451 --- [main] com.yidiandian.TaobaoApplication         : The following profiles are active: dev
+2020-10-20 18:29:36.733  INFO 44451 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-20 18:29:36.734  INFO 44451 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-10-20 18:29:36.799  INFO 44451 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57ms. Found 1 repository interfaces.
+2020-10-20 18:29:36.811  INFO 44451 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-20 18:29:36.812  INFO 44451 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-10-20 18:29:36.828  INFO 44451 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.yidiandian.mapper.CategoriesMapper.
+2020-10-20 18:29:36.828  INFO 44451 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8ms. Found 0 repository interfaces.
+2020-10-20 18:29:37.221  INFO 44451 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1f3c41a7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-20 18:29:37.344  INFO 44451 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'redisConfig' of type [com.yidiandian.utils.RedisConfig$$EnhancerBySpringCGLIB$$fcd919ff] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-20 18:29:37.745  INFO 44451 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9098 (http)
+2020-10-20 18:29:37.767  INFO 44451 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-20 18:29:37.767  INFO 44451 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2020-10-20 18:29:37.862  INFO 44451 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-20 18:29:37.863  INFO 44451 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2054 ms
+2020-10-20 18:29:38.216  INFO 44451 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-20 18:29:38.569  INFO 44451 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-20 18:29:38.642  INFO 44451 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-10-20 18:29:38.716  INFO 44451 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2020-10-20 18:29:38.718  INFO 44451 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-10-20 18:29:38.851  INFO 44451 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-10-20 18:29:38.973  INFO 44451 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-10-20 18:29:39.696  INFO 44451 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-20 18:29:40.796  WARN 44451 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-20 18:29:41.085  INFO 44451 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-20 18:29:41.210  WARN 44451 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-10-20 18:29:41.249  INFO 44451 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-10-20 18:29:41.455  INFO 44451 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-10-20 18:29:41.470  INFO 44451 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-10-20 18:29:41.483  INFO 44451 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-10-20 18:29:41.741  INFO 44451 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9098 (http) with context path ''
+2020-10-20 18:29:41.743  INFO 44451 --- [main] com.yidiandian.TaobaoApplication         : Started TaobaoApplication in 6.424 seconds (JVM running for 7.151)
+2020-10-20 18:31:42.760  INFO 44451 --- [http-nio-9098-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-20 18:31:42.760  INFO 44451 --- [http-nio-9098-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-10-20 18:31:42.780  INFO 44451 --- [http-nio-9098-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 20 ms
+2020-10-20 18:32:59.436 DEBUG 44451 --- [http-nio-9098-exec-9] com.yidiandian.dao.UserInfoDao.update    : ==>  Preparing: update Travel.user_info SET user_id = ?, user_nick = ?, password = ?, gender = ?, head_image = ?, phone = ?, status = ? where user_id = ? 
+2020-10-20 18:32:59.659 DEBUG 44451 --- [http-nio-9098-exec-9] com.yidiandian.dao.UserInfoDao.update    : ==> Parameters: asOYIAWu(String), 杰哥(String), 123456(String), 0(Integer), www.baidu.com.jpg(String), 15290810931(String), 0(Integer), asOYIAWu(String)
+2020-10-20 18:32:59.664 DEBUG 44451 --- [http-nio-9098-exec-9] com.yidiandian.dao.UserInfoDao.update    : <==    Updates: 1
+2020-10-20 18:33:03.893 DEBUG 44451 --- [http-nio-9098-exec-9] c.y.dao.UserInfoDetailsDao.update        : ==>  Preparing: update Travel.user_info_details SET user_id = ?, birthday = ?, phone = ?, email = ?, wechat = ?, family_address = ? where user_id = ? 
+2020-10-20 18:33:03.896 DEBUG 44451 --- [http-nio-9098-exec-9] c.y.dao.UserInfoDetailsDao.update        : ==> Parameters: asOYIAWu(String), 2020-10-15 03:12:44.0(Timestamp), 15290810931(String), 15290810931@163.com(String), unknown(String), 河南沈丘(String), asOYIAWu(String)
+2020-10-20 18:33:03.900 DEBUG 44451 --- [http-nio-9098-exec-9] c.y.dao.UserInfoDetailsDao.update        : <==    Updates: 1
+2020-10-20 18:33:04.533 DEBUG 44451 --- [http-nio-9098-exec-9] c.y.dao.UserHobbyDao.deleteByUserId      : ==>  Preparing: delete from Travel.user_hobby where user_id = ? 
+2020-10-20 18:33:04.535 DEBUG 44451 --- [http-nio-9098-exec-9] c.y.dao.UserHobbyDao.deleteByUserId      : ==> Parameters: asOYIAWu(String)
+2020-10-20 18:33:04.542 DEBUG 44451 --- [http-nio-9098-exec-9] c.y.dao.UserHobbyDao.deleteByUserId      : <==    Updates: 2
+2020-10-20 18:33:04.636 DEBUG 44451 --- [http-nio-9098-exec-9] c.y.dao.UserHobbyDao.batchInsertHobby    : ==>  Preparing: insert into Travel.user_hobby(user_id,hobby,create_time,update_time)values ( ?,?,now(),now() ) , ( ?,?,now(),now() ) 
+2020-10-20 18:33:04.643 DEBUG 44451 --- [http-nio-9098-exec-9] c.y.dao.UserHobbyDao.batchInsertHobby    : ==> Parameters: asOYIAWu(String), 3(Integer), asOYIAWu(String), 4(Integer)
+2020-10-20 18:33:04.647 DEBUG 44451 --- [http-nio-9098-exec-9] c.y.dao.UserHobbyDao.batchInsertHobby    : <==    Updates: 2
+2020-10-20 18:35:33.580  INFO 44451 --- [http-nio-9098-exec-1] c.y.service.impl.UserInfoServiceImpl     : 添加用户信息请求参数：{"birthday":800910764000,"statusDesc":"正常","gender":0,"headImage":"www.baidu.com.jpg","wechat":"unknown","hobbyList":[{"updateTime":1602702764000,"userId":"asOYIAWu","createTime":1602702764000,"id":0,"hobby":3},{"updateTime":1602702764000,"userId":"asOYIAWu","createTime":1602702764000,"id":0,"hobby":4}],"userName":"张杰","userId":"asOYIAWu","genderDesc":"男","familyAddress":"河南沈丘","password":"123456","userNick":"杰哥","phone":"15290810931","email":"15290810931@163.com","status":0}
+2020-10-20 18:35:33.581  INFO 44451 --- [http-nio-9098-exec-1] c.y.service.impl.UserInfoServiceImpl     : 通过用户名查询用户信息请求参数：张杰
+2020-10-20 18:35:33.584 DEBUG 44451 --- [http-nio-9098-exec-1] c.y.dao.UserInfoDao.findUserInfoByName   : ==>  Preparing: select id, user_id, user_name, user_nick, password, gender, head_image, phone, status, create_time, update_time from Travel.user_info WHERE concat(user_name,user_nick,phone) LIKE CONCAT ('%',?,'%') 
+2020-10-20 18:35:33.585 DEBUG 44451 --- [http-nio-9098-exec-1] c.y.dao.UserInfoDao.findUserInfoByName   : ==> Parameters: 张杰(String)
+2020-10-20 18:35:33.596 DEBUG 44451 --- [http-nio-9098-exec-1] c.y.dao.UserInfoDao.findUserInfoByName   : <==      Total: 0
+2020-10-20 18:35:33.598 DEBUG 44451 --- [http-nio-9098-exec-1] com.yidiandian.dao.UserInfoDao.insert    : ==>  Preparing: insert into Travel.user_info(user_id, user_name, user_nick, password, gender, head_image, phone, status, create_time, update_time) values (?, ?, ?, ?, ?, ?, ?, ?, now(), now()) 
+2020-10-20 18:35:33.599 DEBUG 44451 --- [http-nio-9098-exec-1] com.yidiandian.dao.UserInfoDao.insert    : ==> Parameters: cdCkXwl5(String), 张杰(String), 杰哥(String), 123456(String), 0(Integer), www.baidu.com.jpg(String), 15290810931(String), 0(Integer)
+2020-10-20 18:35:33.600 DEBUG 44451 --- [http-nio-9098-exec-1] com.yidiandian.dao.UserInfoDao.insert    : <==    Updates: 1
+2020-10-20 18:35:33.604  INFO 44451 --- [http-nio-9098-exec-1] com.yidiandian.utils.GenerateCodeUtils   : 生成的邮件验证码是：66btb
+2020-10-20 18:35:33.612 DEBUG 44451 --- [http-nio-9098-exec-1] c.y.dao.UserInfoDetailsDao.insert        : ==>  Preparing: insert into Travel.user_info_details(user_id, birthday, phone, email, email_status,wechat, family_address, create_time, update_time) values (?, ?, ?, ?,?, ?, ?, now(), now()) 
+2020-10-20 18:35:33.614 DEBUG 44451 --- [http-nio-9098-exec-1] c.y.dao.UserInfoDetailsDao.insert        : ==> Parameters: cdCkXwl5(String), 1995-05-20 03:12:44.0(Timestamp), 15290810931(String), 15290810931@163.com(String), 0(Integer), unknown(String), 河南沈丘(String)
+2020-10-20 18:35:33.615 DEBUG 44451 --- [http-nio-9098-exec-1] c.y.dao.UserInfoDetailsDao.insert        : <==    Updates: 1
+2020-10-20 18:35:34.832  INFO 44451 --- [http-nio-9098-exec-1] c.y.service.impl.EmailServiceImpl        : 邮件已经发送...
+2020-10-20 18:35:34.834 DEBUG 44451 --- [http-nio-9098-exec-1] com.yidiandian.dao.TravelLogDao.insert   : ==>  Preparing: insert into Travel.travel_log(user_id, user_name, mobile, email, wechat, code, log_type, create_time, update_time) values (?, ?, ?, ?, ?, ?, ?, now(), now()) 
+2020-10-20 18:35:34.834 DEBUG 44451 --- [http-nio-9098-exec-1] com.yidiandian.dao.TravelLogDao.insert   : ==> Parameters: cdCkXwl5(String), null, null, null, null, 66btb(String), 0(Integer)
+2020-10-20 18:35:34.836 DEBUG 44451 --- [http-nio-9098-exec-1] com.yidiandian.dao.TravelLogDao.insert   : <==    Updates: 1
+2020-10-20 18:35:34.837 DEBUG 44451 --- [http-nio-9098-exec-1] c.y.dao.UserHobbyDao.batchInsertHobby    : ==>  Preparing: insert into Travel.user_hobby(user_id,hobby,create_time,update_time)values ( ?,?,now(),now() ) , ( ?,?,now(),now() ) 
+2020-10-20 18:35:34.837 DEBUG 44451 --- [http-nio-9098-exec-1] c.y.dao.UserHobbyDao.batchInsertHobby    : ==> Parameters: cdCkXwl5(String), 3(Integer), cdCkXwl5(String), 4(Integer)
+2020-10-20 18:35:34.838 DEBUG 44451 --- [http-nio-9098-exec-1] c.y.dao.UserHobbyDao.batchInsertHobby    : <==    Updates: 2
+2020-10-20 18:37:42.026 DEBUG 44451 --- [http-nio-9098-exec-2] com.yidiandian.dao.UserInfoDao.update    : ==>  Preparing: update Travel.user_info SET user_id = ?, user_nick = ?, password = ?, gender = ?, head_image = ?, phone = ?, status = ? where user_id = ? 
+2020-10-20 18:37:42.029 DEBUG 44451 --- [http-nio-9098-exec-2] com.yidiandian.dao.UserInfoDao.update    : ==> Parameters: cdCkXwl5(String), 云澜哥哥(String), 123456(String), 0(Integer), www.baidu.com.jpg(String), 17621007255(String), 0(Integer), cdCkXwl5(String)
+2020-10-20 18:37:42.035 DEBUG 44451 --- [http-nio-9098-exec-2] com.yidiandian.dao.UserInfoDao.update    : <==    Updates: 1
+2020-10-20 18:37:42.562 DEBUG 44451 --- [http-nio-9098-exec-2] c.y.dao.UserInfoDetailsDao.update        : ==>  Preparing: update Travel.user_info_details SET user_id = ?, birthday = ?, phone = ?, email = ?, wechat = ?, family_address = ? where user_id = ? 
+2020-10-20 18:37:42.567 DEBUG 44451 --- [http-nio-9098-exec-2] c.y.dao.UserInfoDetailsDao.update        : ==> Parameters: cdCkXwl5(String), 1993-08-23 03:12:44.0(Timestamp), 17621007255(String), 17621007255@163.com(String), 17621007255(String), 河南商丘(String), cdCkXwl5(String)
+2020-10-20 18:37:42.574 DEBUG 44451 --- [http-nio-9098-exec-2] c.y.dao.UserInfoDetailsDao.update        : <==    Updates: 1
+2020-10-20 18:37:43.061 DEBUG 44451 --- [http-nio-9098-exec-2] c.y.dao.UserHobbyDao.deleteByUserId      : ==>  Preparing: delete from Travel.user_hobby where user_id = ? 
+2020-10-20 18:37:43.064 DEBUG 44451 --- [http-nio-9098-exec-2] c.y.dao.UserHobbyDao.deleteByUserId      : ==> Parameters: cdCkXwl5(String)
+2020-10-20 18:37:43.070 DEBUG 44451 --- [http-nio-9098-exec-2] c.y.dao.UserHobbyDao.deleteByUserId      : <==    Updates: 2
+2020-10-20 18:37:43.076 DEBUG 44451 --- [http-nio-9098-exec-2] c.y.dao.UserHobbyDao.batchInsertHobby    : ==>  Preparing: insert into Travel.user_hobby(user_id,hobby,create_time,update_time)values ( ?,?,now(),now() ) , ( ?,?,now(),now() ) 
+2020-10-20 18:37:43.088 DEBUG 44451 --- [http-nio-9098-exec-2] c.y.dao.UserHobbyDao.batchInsertHobby    : ==> Parameters: cdCkXwl5(String), 3(Integer), cdCkXwl5(String), 4(Integer)
+2020-10-20 18:37:43.095 DEBUG 44451 --- [http-nio-9098-exec-2] c.y.dao.UserHobbyDao.batchInsertHobby    : <==    Updates: 2
+2020-10-20 18:38:23.272 DEBUG 44451 --- [http-nio-9098-exec-4] com.yidiandian.dao.UserInfoDao.update    : ==>  Preparing: update Travel.user_info SET user_id = ?, user_nick = ?, password = ?, gender = ?, head_image = ?, phone = ?, status = ? where user_id = ? 
+2020-10-20 18:38:23.279 DEBUG 44451 --- [http-nio-9098-exec-4] com.yidiandian.dao.UserInfoDao.update    : ==> Parameters: cdCkXwl5(String), 云澜哥哥(String), 123456(String), 0(Integer), www.baidu.com.jpg(String), 17621007255(String), 0(Integer), cdCkXwl5(String)
+2020-10-20 18:38:23.283 DEBUG 44451 --- [http-nio-9098-exec-4] com.yidiandian.dao.UserInfoDao.update    : <==    Updates: 1
+2020-10-20 18:38:25.512 DEBUG 44451 --- [http-nio-9098-exec-4] c.y.dao.UserInfoDetailsDao.update        : ==>  Preparing: update Travel.user_info_details SET user_id = ?, birthday = ?, phone = ?, email = ?, wechat = ?, family_address = ? where user_id = ? 
+2020-10-20 18:38:25.515 DEBUG 44451 --- [http-nio-9098-exec-4] c.y.dao.UserInfoDetailsDao.update        : ==> Parameters: cdCkXwl5(String), 1993-08-23 03:12:44.0(Timestamp), 17621007255(String), 17621007255@163.com(String), 17621007255(String), 河南商丘(String), cdCkXwl5(String)
+2020-10-20 18:38:25.519 DEBUG 44451 --- [http-nio-9098-exec-4] c.y.dao.UserInfoDetailsDao.update        : <==    Updates: 1
+2020-10-20 18:38:28.258 DEBUG 44451 --- [http-nio-9098-exec-4] c.y.dao.UserHobbyDao.deleteByUserId      : ==>  Preparing: delete from Travel.user_hobby where user_id = ? 
+2020-10-20 18:38:28.259 DEBUG 44451 --- [http-nio-9098-exec-4] c.y.dao.UserHobbyDao.deleteByUserId      : ==> Parameters: cdCkXwl5(String)
+2020-10-20 18:38:28.261 DEBUG 44451 --- [http-nio-9098-exec-4] c.y.dao.UserHobbyDao.deleteByUserId      : <==    Updates: 2
+2020-10-20 18:38:28.262 DEBUG 44451 --- [http-nio-9098-exec-4] c.y.dao.UserHobbyDao.batchInsertHobby    : ==>  Preparing: insert into Travel.user_hobby(user_id,hobby,create_time,update_time)values ( ?,?,now(),now() ) , ( ?,?,now(),now() ) 
+2020-10-20 18:38:28.263 DEBUG 44451 --- [http-nio-9098-exec-4] c.y.dao.UserHobbyDao.batchInsertHobby    : ==> Parameters: cdCkXwl5(String), 1(Integer), cdCkXwl5(String), 2(Integer)
+2020-10-20 18:38:28.264 DEBUG 44451 --- [http-nio-9098-exec-4] c.y.dao.UserHobbyDao.batchInsertHobby    : <==    Updates: 2
+2020-10-20 18:38:58.944  INFO 44451 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-20 18:38:58.946  INFO 44451 --- [Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-10-20 18:38:58.949  INFO 44451 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-10-20 18:38:58.955  INFO 44451 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

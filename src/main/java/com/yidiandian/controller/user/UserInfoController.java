@@ -2,6 +2,7 @@ package com.yidiandian.controller.user;
 
 import com.yidiandian.entity.TravelLog;
 import com.yidiandian.entity.UserInfoDetails;
+import com.yidiandian.enums.EmailStatusEnum;
 import com.yidiandian.service.TravelLogService;
 import com.yidiandian.service.UserInfoDetailsService;
 import com.yidiandian.service.UserInfoService;
@@ -48,10 +49,16 @@ public class UserInfoController {
         TravelLog log = travelLogService.findLogByCode(code);
         if (log != null){
              UserInfoVO vo = new UserInfoVO();
-             vo.setEmailStatus(1);
+             vo.setEmailStatus(EmailStatusEnum.BIND.getCode());
              vo.setUserId(log.getUserId());
              userInfoDetailsService.updateUserDetails(vo);
         }
        return Result.success();
+    }
+
+    @ApiOperation(value = "用户修改自己的个人信息",notes = "=用户信息")
+    @PostMapping("/updateUserInfo")
+    public Result updateUserInfo(@RequestBody UserInfoVO vo){
+      return userInfoService.updateUserInfo(vo);
     }
 }
