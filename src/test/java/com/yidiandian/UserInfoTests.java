@@ -1,7 +1,6 @@
 package com.yidiandian;
 
 
-import cn.hutool.json.JSON;
 import cn.hutool.json.JSONUtil;
 import com.yidiandian.entity.UserInfo;
 import com.yidiandian.service.DistrictService;

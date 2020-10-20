@@ -8,6 +8,7 @@ import com.yidiandian.entity.UserInfoDetails;
 import com.yidiandian.service.UserHobbyService;
 import com.yidiandian.service.UserInfoDetailsService;
 import com.yidiandian.service.UserInfoService;
+import com.yidiandian.support.Result;
 import com.yidiandian.view.UserInfoView;
 import com.yidiandian.vo.UserInfoVO;
 import lombok.extern.slf4j.Slf4j;
@@ -39,16 +40,16 @@ public class UserInfoServiceImpl implements UserInfoService {
     UserHobbyService userHobbyService;
 
     @Override
-    public int insertUserInfo(UserInfoVO userInfoVO) {
+    public Result insertUserInfo(UserInfoVO userInfoVO) {
         log.info("添加用户信息请求参数：{}", JSONUtil.parseObj(userInfoVO));
         if (findUserInfoByUserName(userInfoVO.getUserName()) != null){
-          return 0;
+          return Result.error("您已经是平台用户，请勿重复注册");
         }
         String userId = RandomStringUtils.randomAlphanumeric(8);
         int insertUserInfo = userInfoDao.insert(structureUserInfo(userInfoVO,userId));
-        int insertDetails = userInfoDetailsService.insertDetails(userInfoVO,userId);
-        int insertHobby = userHobbyService.insertUserHobby(userInfoVO,userId);
-        return insertUserInfo > 0 ? 1 : 0 ;
+        userInfoDetailsService.insertDetails(userInfoVO,userId);
+        userHobbyService.insertUserHobby(userInfoVO,userId);
+        return insertUserInfo > 0 ? Result.success() : Result.error() ;
     }
 
     @Override
@@ -58,9 +59,9 @@ public class UserInfoServiceImpl implements UserInfoService {
     }
 
     @Override
-    public UserInfoView findUserInfo(String userId) {
+    public UserInfoView findUserInfo(String token) {
         //解析token 获取用户Id
-       // String userId = "u1001";
+        String userId = "u1001";
 
         if (StringUtils.isBlank(userId)){
            return null;
