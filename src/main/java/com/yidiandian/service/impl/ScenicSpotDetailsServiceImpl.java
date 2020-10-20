@@ -48,7 +48,7 @@ public class ScenicSpotDetailsServiceImpl implements ScenicSpotDetailsService {
     /**
      * 新增数据
      *
-     * @param scenicSpotDetails 实例对象
+     * @param vo 实例对象
      * @return 实例对象
      */
     @Override

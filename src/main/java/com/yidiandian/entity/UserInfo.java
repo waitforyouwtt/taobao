@@ -1,5 +1,7 @@
 package com.yidiandian.entity;
 
+import com.yidiandian.enums.GenderEnum;
+import com.yidiandian.enums.HobbyEnum;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
@@ -39,6 +41,7 @@ public class UserInfo implements Serializable {
     * 用户性别：0 男 1 女 2保密
     */
     private Integer gender;
+    private String  genderDesc;
     /**
     * 用户头像
     */
@@ -59,5 +62,13 @@ public class UserInfo implements Serializable {
     * 修改时间
     */
     private Date updateTime;
+
+    public void setGenderDesc() {
+        this.genderDesc = GenderEnum.fromValue(gender).getMsg();
+    }
+
+    public String getGenderDesc() {
+        return genderDesc = GenderEnum.fromValue(gender).getMsg();
+    }
 
 }

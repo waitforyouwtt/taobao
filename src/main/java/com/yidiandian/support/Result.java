@@ -30,8 +30,8 @@ public class Result<T> {
         this.data = data;
     }
 
-    public Result() {
-    }
+    public Result() {}
+
     public static <T> Result<T> success(T data) {
         Result<T> response = new Result();
         response.setCode(SystemCodeEnum.SUCCESS.getCode());

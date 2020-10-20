@@ -131,6 +131,12 @@
 		</dependency>
 		<!-- 指定排序用到的end -->
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
+			<version>2.2.9.RELEASE</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

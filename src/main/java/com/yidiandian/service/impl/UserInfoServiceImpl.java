@@ -9,6 +9,7 @@ import com.yidiandian.service.UserHobbyService;
 import com.yidiandian.service.UserInfoDetailsService;
 import com.yidiandian.service.UserInfoService;
 import com.yidiandian.support.Result;
+import com.yidiandian.utils.GenerateCodeUtils;
 import com.yidiandian.view.UserInfoView;
 import com.yidiandian.vo.UserInfoVO;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +19,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+
 import javax.annotation.Resource;
+import javax.persistence.RollbackException;
 import java.util.List;
 
 
@@ -39,6 +43,7 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Autowired
     UserHobbyService userHobbyService;
 
+    @ExceptionHandler(RollbackException.class)
     @Override
     public Result insertUserInfo(UserInfoVO userInfoVO) {
         log.info("添加用户信息请求参数：{}", JSONUtil.parseObj(userInfoVO));
@@ -47,7 +52,12 @@ public class UserInfoServiceImpl implements UserInfoService {
         }
         String userId = RandomStringUtils.randomAlphanumeric(8);
         int insertUserInfo = userInfoDao.insert(structureUserInfo(userInfoVO,userId));
-        userInfoDetailsService.insertDetails(userInfoVO,userId);
+        if (StringUtils.isNotBlank(userInfoVO.getEmail())){
+            //获取激活码
+            String code = GenerateCodeUtils.generateEmailCode();
+            userInfoVO.setVerifyCode(code);
+        }
+        userInfoDetailsService.saveUserDetails(userInfoVO,userId);
         userHobbyService.insertUserHobby(userInfoVO,userId);
         return insertUserInfo > 0 ? Result.success() : Result.error() ;
     }
@@ -59,14 +69,19 @@ public class UserInfoServiceImpl implements UserInfoService {
     }
 
     @Override
-    public UserInfoView findUserInfo(String token) {
+    public Result findUserInfo(String token) {
         //解析token 获取用户Id
-        String userId = "u1001";
+        String userId = token;
 
         if (StringUtils.isBlank(userId)){
-           return null;
+           return Result.success();
         }
-        return structureUserInfoView(userId);
+        return Result.success(structureUserInfoView(userId));
+    }
+
+    @Override
+    public Result updateUserInfo(UserInfoVO userInfoVO) {
+        return null;
     }
 
     private UserInfoView structureUserInfoView(String userId){

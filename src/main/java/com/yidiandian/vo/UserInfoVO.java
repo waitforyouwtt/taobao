@@ -1,6 +1,8 @@
 package com.yidiandian.vo;
 
 import com.yidiandian.entity.UserHobby;
+import com.yidiandian.enums.GenderEnum;
+import com.yidiandian.enums.UserStatusEnum;
 import lombok.Data;
 
 import java.util.Date;
@@ -28,6 +30,7 @@ public class UserInfoVO {
      * 用户性别：0 男 1 女 2保密
      */
     private Integer gender;
+    private String  genderDesc;
     /**
      * 用户头像
      */
@@ -40,6 +43,7 @@ public class UserInfoVO {
      * 用户状态：0 正常 1 禁用
      */
     private Integer status;
+    private String  statusDesc;
 
     /**
      * 用户id
@@ -55,6 +59,17 @@ public class UserInfoVO {
      * 绑定邮箱
      */
     private String email;
+
+    /**
+     * 校验码
+     */
+    private String verifyCode;
+
+    /**
+     * 绑定邮箱状态：0 未绑定 1已绑定
+     */
+    private Integer emailStatus;
+
     /**
      * 绑定微信
      */
@@ -67,4 +82,20 @@ public class UserInfoVO {
      * 用户爱好
      */
     private List<UserHobby> hobbyList;
+
+    public void setGenderDesc() {
+        this.genderDesc = GenderEnum.fromValue(gender).getMsg();
+    }
+
+    public String getGenderDesc() {
+        return genderDesc = GenderEnum.fromValue(gender).getMsg();
+    }
+
+    public void setStatusDesc() {
+        this.statusDesc = UserStatusEnum.fromValue(status).getMsg();
+    }
+
+    public String getStatusDesc() {
+        return statusDesc = UserStatusEnum.fromValue(status).getMsg();
+    }
 }

@@ -1,14 +1,12 @@
 package com.yidiandian.service.impl;
 
 import com.yidiandian.entity.Categories;
-import com.yidiandian.enums.CategoriesOperationTypeEnum;
 import com.yidiandian.mapper.CategoriesMapper;
 import com.yidiandian.service.CategoriesService;
+import com.yidiandian.support.Result;
 import com.yidiandian.utils.MyException;
-import com.yidiandian.utils.Result;
 import com.yidiandian.view.CategoriesView;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.stereotype.Service;

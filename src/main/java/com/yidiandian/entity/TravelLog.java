@@ -6,16 +6,16 @@ import java.util.Date;
 import java.io.Serializable;
 
 /**
- * 用户信息详情表(UserInfoDetails)实体类
+ * on Travel 日志记录表(TravelLog)实体类
  *
  * @author makejava
- * @since 2020-10-15 09:47:13
+ * @since 2020-10-20 15:32:21
  */
 @Data
-public class UserInfoDetails implements Serializable {
-    private static final long serialVersionUID = 246038505552540131L;
+public class TravelLog implements Serializable {
+    private static final long serialVersionUID = -32016109775544687L;
     /**
-    * 自增id
+    * 自增主键
     */
     private Integer id;
     /**
@@ -23,29 +23,29 @@ public class UserInfoDetails implements Serializable {
     */
     private String userId;
     /**
-    * 用户生日
+    * 用户姓名
     */
-    private Date birthday;
+    private String userName;
     /**
-    * 绑定手机号
+    * 用户手机号
     */
-    private String phone;
+    private String mobile;
     /**
-    * 绑定邮箱
+    * 用户邮箱
     */
     private String email;
     /**
-     * 邮箱绑定状态
-     */
-    private Integer emailStatus;
-    /**
-    * 绑定微信
+    * 用户微信
     */
     private String wechat;
     /**
-    * 家庭住址
+    * 验证码
     */
-    private String familyAddress;
+    private String code;
+    /**
+    * 日志类型：0 用户注册
+    */
+    private Integer logType;
     /**
     * 创建时间
     */

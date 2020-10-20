@@ -1,6 +1,7 @@
 package com.yidiandian.service;
 
 import com.yidiandian.entity.UserInfoDetails;
+import com.yidiandian.support.Result;
 import com.yidiandian.vo.UserInfoVO;
 
 /**
@@ -10,13 +11,20 @@ import com.yidiandian.vo.UserInfoVO;
 public interface UserInfoDetailsService {
 
     /**
-     * 添加用户详情信息
+     * 保存用户详情信息
      */
-    int insertDetails(UserInfoVO userInfoVO,String userId);
+    Result saveUserDetails(UserInfoVO userInfoVO,String userId);
 
     /**
      * 根据用户id 获取用户详情信息
      *
      */
     UserInfoDetails queryUserInfoDetails(String userId);
+
+    /**
+     * 修改用户信息
+     * @param userInfoVO
+     * @return
+     */
+    Result updateUserDetails(UserInfoVO userInfoVO);
 }

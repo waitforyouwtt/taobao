@@ -1,7 +1,7 @@
 package com.yidiandian.service;
 
 import com.yidiandian.entity.Categories;
-import com.yidiandian.utils.Result;
+import com.yidiandian.support.Result;
 import com.yidiandian.view.CategoriesView;
 
 /**

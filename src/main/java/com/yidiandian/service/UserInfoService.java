@@ -30,5 +30,12 @@ public interface UserInfoService {
      * @param token
      * @return
      */
-    UserInfoView findUserInfo(String token);
+    Result findUserInfo(String token);
+
+    /**
+     * 修改用户信息
+     * @param userInfoVO
+     * @return
+     */
+    Result updateUserInfo(UserInfoVO userInfoVO);
 }
