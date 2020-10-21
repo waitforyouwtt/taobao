@@ -14,4 +14,8 @@ public class QueryScenicSpotVO implements Serializable {
 
     private String scenicSpotInfoId;
 
+    private String provinceCode;
+
+    private String cityCode;
+
 }

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>景点显示</title>
+</head>
+<body>
+
+    <table border="1">
+       <!-- <form>
+        <caption>
+            <input type="text" value="310100" name="searchBox" />
+            <input type="button" value="搜索" class="search"/>
+        </caption>
+        </form>-->
+        <thead>
+        <tr>
+            <th>景点id</th>
+            <th>平台唯一码</th>
+            <th>景点名称</th>
+            <th>主图</th>
+            <th>所在省份</th>
+            <th>所在城市</th>
+        </tr>
+        </thead>
+        <tbody class="play">
+
+        </tbody>
+    </table>
+</body>
+</html>
+<script src="../js/index/jquery_1.9.js"></script>
+<script src="../js/index/main.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $.ajax({
+            url:"/backstage/queryScenicSpotGroup",
+            type:"post",
+            data:{},
+            success:function(obj){
+                var data = obj.data;
+                console.info("后台返回给前台的数据：{}",data);
+                var str = "";
+                for(var i=0;i<data.length;i++){
+                    str += "<tr>";
+                    str += "<td>"+data[i].id+"</td>";
+                    str += "<td>"+data[i].platformUniqueCode+"</td>";
+                    str += "<td>"+data[i].scenicSpotName+"</td>";
+                    str += "<td><img width='40px' height='40px' th src=\""+data[i].mainImage+"\"></td>";
+                    str += "<td>"+data[i].provinceCode+"</td>";
+                    str += "<td>"+data[i].cityCode+"</td>";
+                    str += "</tr>"
+                }
+                console.log(str);
+                $(".play").html(str);
+            },
+            dataType:"json"
+        });
+    });
+
+</script>

@@ -2,6 +2,7 @@ package com.yidiandian.service;
 
 import com.yidiandian.entity.ScenicSpotDetails;
 import com.yidiandian.vo.ScenicSpotInfoVO;
+import com.yidiandian.vo.UserDynamicVO;
 
 import java.util.List;
 
@@ -54,4 +55,11 @@ public interface ScenicSpotDetailsService {
      */
     boolean deleteById(Integer id);
 
+    /**
+     * 平台用户发布动态
+     * @param userDynamicVO
+     * @param scenicSpotInfoId
+     * @return
+     */
+    int publishDynamic(UserDynamicVO userDynamicVO, int scenicSpotInfoId);
 }

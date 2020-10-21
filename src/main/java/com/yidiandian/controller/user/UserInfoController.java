@@ -1,23 +1,23 @@
 package com.yidiandian.controller.user;
 
 import com.yidiandian.entity.TravelLog;
-import com.yidiandian.entity.UserInfoDetails;
 import com.yidiandian.enums.EmailStatusEnum;
 import com.yidiandian.service.TravelLogService;
 import com.yidiandian.service.UserInfoDetailsService;
 import com.yidiandian.service.UserInfoService;
 import com.yidiandian.support.Result;
+import com.yidiandian.vo.UserDynamicVO;
 import com.yidiandian.vo.UserInfoVO;
 import io.swagger.annotations.ApiOperation;
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 /**
  * @author 凤凰小哥哥
  * @date 2020-10-15
  */
-@RestController
+@Controller
 @RequestMapping("/user")
 public class UserInfoController {
 
@@ -60,5 +60,18 @@ public class UserInfoController {
     @PostMapping("/updateUserInfo")
     public Result updateUserInfo(@RequestBody UserInfoVO vo){
       return userInfoService.updateUserInfo(vo);
+    }
+
+    @ApiOperation(value = "后台景点景区查询页面",notes = "=动态信息")
+    @GetMapping("/toUserDynamic")
+    public String toUserDynamic(){
+        return "/html/userDynamic";
+    }
+
+    @ApiOperation(value = "用户发布个人动态信息",notes = "=用户信息")
+    @PostMapping("/publishDynamic")
+    @ResponseBody
+    public Result publishDynamic(@ModelAttribute UserDynamicVO userDynamicVO){
+        return userInfoService.publishDynamic(userDynamicVO);
     }
 }

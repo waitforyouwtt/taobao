@@ -2,6 +2,8 @@ package com.yidiandian.service;
 
 import com.yidiandian.entity.ScenicSpotImages;
 import com.yidiandian.vo.ScenicSpotInfoVO;
+import com.yidiandian.vo.UserDynamicVO;
+
 import java.util.List;
 
 /**
@@ -51,4 +53,10 @@ public interface ScenicSpotImagesService {
      */
     boolean deleteById(Integer id);
 
+    /**
+     * 平台用户发布动态
+     * @param userDynamicVO
+     * @return
+     */
+    int publishDynamic(UserDynamicVO userDynamicVO,int scenicSpotInfoId);
 }

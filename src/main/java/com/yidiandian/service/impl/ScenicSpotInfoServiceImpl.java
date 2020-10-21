@@ -11,8 +11,10 @@ import com.yidiandian.support.Result;
 import com.yidiandian.utils.GenerateCodeUtils;
 import com.yidiandian.utils.UploadUtils;
 import com.yidiandian.view.ScenicSpotInfoView;
+import com.yidiandian.view.ScenicSpotView;
 import com.yidiandian.vo.QueryScenicSpotVO;
 import com.yidiandian.vo.ScenicSpotInfoVO;
+import com.yidiandian.vo.UserDynamicVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
@@ -172,6 +174,39 @@ public class ScenicSpotInfoServiceImpl implements ScenicSpotInfoService {
 
     @Override
     public List<ScenicSpotInfoView> findSpotInfo(QueryScenicSpotVO spotVO) {
+        log.info("查看用户发表的动态请求参数：{}",JSONUtil.parseObj(spotVO));
+
         return null;
+    }
+
+    @Override
+    public Result<List<ScenicSpotInfo>> findSpotInfoLikeTitle(String title) {
+        log.info("根据标题模糊查询请求参数：{}",title);
+        List<ScenicSpotInfo> spotInfoLikeTitle = scenicSpotInfoDao.findSpotInfoLikeTitle(title);
+        return Result.success(spotInfoLikeTitle);
+    }
+
+    @Override
+    public int publishDynamic(UserDynamicVO userDynamicVO) {
+        ScenicSpotInfo scenicSpotInfo = structurePublishDynamicModel(userDynamicVO);
+        return scenicSpotInfoDao.insert(scenicSpotInfo) > 0 ? scenicSpotInfo.getId() : 0;
+    }
+
+    @Override
+    public Result queryScenicSpotGroup(QueryScenicSpotVO vo) {
+        List<ScenicSpotView> scenicSpotViews = scenicSpotInfoDao.queryScenicSpotGroup(vo);
+        return Result.success(scenicSpotViews);
+    }
+
+    private ScenicSpotInfo structurePublishDynamicModel(UserDynamicVO vo){
+        ScenicSpotInfo info = new ScenicSpotInfo();
+        String uniqueCode = GenerateCodeUtils.generatePlatformUniqueCode(vo.getProvinceCode(), vo.getCityCode());
+        info.setPlatformUniqueCode(uniqueCode);
+        info.setUserId(vo.getUserId());
+        info.setScenicSpotName(vo.getTitle());
+        info.setScenicSpotDescribe(vo.getTitle());
+        info.setStatus(0);
+        info.setPulishStatus(0);
+        return info;
     }
 }

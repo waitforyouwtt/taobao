@@ -1,6 +1,9 @@
 package com.yidiandian.dao;
 
 import com.yidiandian.entity.ScenicSpotInfo;
+import com.yidiandian.view.ScenicSpotInfoView;
+import com.yidiandian.view.ScenicSpotView;
+import com.yidiandian.vo.QueryScenicSpotVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
@@ -71,4 +74,17 @@ public interface ScenicSpotInfoDao {
      */
     ScenicSpotInfo findAllByScenicSpotName(@Param("scenicSpotName") String scenicSpotName);
 
+    /**
+     * 根据标题模糊查询
+     * @param title
+     * @return
+     */
+    List<ScenicSpotInfo> findSpotInfoLikeTitle(@Param("title") String title);
+
+    /**
+     * 查询景点景区且根据省份城市分组
+     * @param vo
+     * @return
+     */
+    List<ScenicSpotView> queryScenicSpotGroup(QueryScenicSpotVO vo);
 }

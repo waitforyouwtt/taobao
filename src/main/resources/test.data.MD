@@ -64,3 +64,34 @@
   "title": "上海外滩",
   "userId": "AAAAA"
 }
+
+"修改个人用户信息" :{
+  "birthday": "1993-08-23 03:12:44",
+  "email": "17621007255@163.com",
+  "familyAddress": "河南商丘",
+  "gender": 0,
+  "headImage": "www.baidu.com.jpg",
+  "hobbyList": [
+    {
+      "createTime": "2020-10-15 03:12:44",
+      "hobby": 1,
+      "id": 0,
+      "updateTime": "2020-10-15 03:12:44",
+      "userId": "asOYIAWu"
+    },
+    {
+      "createTime": "2020-10-15 03:12:44",
+      "hobby": 2,
+      "id": 0,
+      "updateTime": "2020-10-15 03:12:44",
+      "userId": "asOYIAWu"
+    }
+  ],
+  "password": "123456",
+  "phone": "17621007255",
+  "status": 0,
+  "userId": "cdCkXwl5",
+  "userName": "罗显",
+  "userNick": "云澜哥哥",
+  "wechat": "17621007255"
+}

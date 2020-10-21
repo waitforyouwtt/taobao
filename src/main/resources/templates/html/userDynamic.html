@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <form action="/user/publishDynamic" method="post" enctype="multipart/form-data">
+        <table border="1">
+
+            <tr>
+                <td>所在省份：</td>
+                <td>
+                    <select id="provinceCode" class="provinceCode" name="provinceCode">
+                        <option value="-1" >--请选择--</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>所在城市：</td>
+                <td>
+                    <select id="cityCode" class="cityCode" name="cityCode">
+                        <option value="-1">---请选择---</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>标题：</td>
+                <td><input type="text" name="title"/></td>
+            </tr>
+
+            <tr>
+                <td>上传主图：</td>
+                <td>
+                    <input id="main" type="file" name="main" />
+                </td>
+            </tr>
+            <tr>
+                <td>上传图片：</td>
+                <td>
+                    <input id="file" type="file" multiple/>
+                </td>
+            </tr>
+
+        </table>
+        <input type="button" value="上传" id="publish" class="publish"/><br>
+    </form>
+</center>
+</body>
+</html>
+<script src="../js/index/jquery_1.9.js"></script>
+<script src="../js/index/main.js"></script>
+<script type="text/javascript">
+
+    $(function () {
+
+        var provinceName="";
+        var cityName="";
+        var countryName="";
+
+        $.ajax({
+            url:"/findBbsAreaByUPid",
+            type:"post",
+            data:{
+                upid : 0
+            },
+            success:function(obj){
+                var data = obj.data;
+
+                for(var i in data){
+                    $("#provinceCode").append("<option value='"+data[i].id+"'>"+data[i].name+"</option>");
+                }
+            },
+            dataType:"json"
+        });
+
+        $("#provinceCode").change(function(){
+            //清空缓存
+            $("#cityCode option:not(:first)").remove();
+            var cityValue = $("#provinceCode option:selected").val();
+            $.ajax({
+                url:"/findBbsAreaByUPid",
+                type:"post",
+                data:{
+                    upid : cityValue
+                },
+                success:function(obj){
+                    var data = obj.data;
+                    //console.info("后台返回给前台的数据：{}",data);
+                    for(var i in data){
+                        $("#cityCode").append("<option value='"+data[i].id+"'>"+data[i].name+"</option>");
+                    }
+                },
+                dataType:"json"
+            })
+        });
+
+
+        //获取上传图片的长度
+        var length;
+        $("#file").change(function () {
+            length = this.files.length;
+            console.log(length);
+        });
+
+        //上传图片点击事件
+        $(".publish").click(function () {
+            var formData = new FormData();
+            var arr= new Array();
+            var container;
+            var i=0;
+
+            var selectKey   = $('#provinceCode option:selected').text();
+            var selectValue = $('#provinceCode option:selected').val();
+            console.info("选择得到的key:",selectKey);
+            console.info("选择得到的value:",selectValue);
+
+            formData.append('provinceCode', $('#provinceCode option:selected').val());
+            formData.append('cityCode', $('#cityCode option:selected').val());
+
+            formData.append('title', $("input[name='title']").val());
+
+            formData.append('main', document.getElementById("main").files[0]);
+            for(let i=0;i< length;i++){
+                formData.append('files', $('#file')[0].files[i]);
+                console.log(formData.get("files"));
+            }
+            container=formData.getAll("files");
+            for (var item in container) {
+                arr[i] = container[item];
+                i++;
+            }
+            console.log(arr);
+            $.ajax({
+                url: '/user/publishDynamic',
+                type: 'POST',
+                dataType:"json",
+                cache: false,
+                data: formData,
+                processData: false,
+                contentType: false,
+                success:(function(data) {
+                    alert(data.data);
+                    console.info("后台返回给前台的数据：{}",data);
+                }),
+                error:(function(res) {
+                    alert(res.message);
+                })
+            })
+        });
+    });
+</script>

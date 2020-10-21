@@ -3,14 +3,16 @@ package com.yidiandian.service.impl;
 import com.yidiandian.entity.ScenicSpotImages;
 import com.yidiandian.dao.ScenicSpotImagesDao;
 import com.yidiandian.service.ScenicSpotImagesService;
+import com.yidiandian.utils.UploadUtils;
 import com.yidiandian.vo.ScenicSpotInfoVO;
+import com.yidiandian.vo.UserDynamicVO;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * 景点景区图片集合表(ScenicSpotImages)表服务实现类
@@ -19,6 +21,7 @@ import java.util.List;
  * @since 2020-10-15 17:12:26
  */
 @Service
+@Slf4j
 public class ScenicSpotImagesServiceImpl implements ScenicSpotImagesService {
     @Resource
     private ScenicSpotImagesDao scenicSpotImagesDao;
@@ -92,4 +95,49 @@ public class ScenicSpotImagesServiceImpl implements ScenicSpotImagesService {
     public boolean deleteById(Integer id) {
         return this.scenicSpotImagesDao.deleteById(id) > 0;
     }
+
+    @Override
+    public int publishDynamic(UserDynamicVO userDynamicVO,int scenicSpotInfoId) {
+        List<String> images = uploadServer(userDynamicVO).get("imagesPath");
+        if (CollectionUtils.isEmpty(images)){
+            log.info("没有上传图片......");
+            return 0;
+        }else{
+            List<ScenicSpotImages> imagesList = structurePublishDynamicModel(userDynamicVO, images, scenicSpotInfoId);
+            return scenicSpotImagesDao.batchInsertScenicSpotImages(imagesList);
+        }
+    }
+
+    private List<ScenicSpotImages> structurePublishDynamicModel(UserDynamicVO vo,List<String> images, int resultOrder){
+        if (CollectionUtils.isEmpty(images)){
+            return Collections.EMPTY_LIST;
+        }
+        List<ScenicSpotImages>  imagesList = new ArrayList<>();
+        images.stream().forEach(image ->{
+            ScenicSpotImages model = new ScenicSpotImages();
+            model.setScenicSpotInfoId(resultOrder);
+            model.setImage(image);
+            model.setUserId(vo.getUserId());
+            model.setCreateTime(new Date());
+            model.setUpdateTime(new Date());
+            imagesList.add(model);
+        });
+        return imagesList;
+    }
+
+    private Map<String,List<String>> uploadServer(UserDynamicVO vo){
+        Map<String,List<String>> hashMap = new HashMap<>(16);
+        if (vo.getFiles() == null || vo.getFiles().length ==0 ){
+            return hashMap;
+        }
+        List<String> filePaths = new ArrayList<>();
+        for(MultipartFile file : vo.getFiles()){
+            String filePath =  UploadUtils.upload(file);
+            filePaths.add(filePath);
+        }
+        hashMap.put("imagesPath", filePaths);
+        return hashMap;
+    }
+
+
 }

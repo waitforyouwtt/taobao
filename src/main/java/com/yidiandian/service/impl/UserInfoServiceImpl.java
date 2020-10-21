@@ -2,15 +2,15 @@ package com.yidiandian.service.impl;
 
 import cn.hutool.json.JSONUtil;
 import com.yidiandian.dao.UserInfoDao;
+import com.yidiandian.entity.ScenicSpotInfo;
 import com.yidiandian.entity.UserHobby;
 import com.yidiandian.entity.UserInfo;
 import com.yidiandian.entity.UserInfoDetails;
-import com.yidiandian.service.UserHobbyService;
-import com.yidiandian.service.UserInfoDetailsService;
-import com.yidiandian.service.UserInfoService;
+import com.yidiandian.service.*;
 import com.yidiandian.support.Result;
 import com.yidiandian.utils.GenerateCodeUtils;
 import com.yidiandian.view.UserInfoView;
+import com.yidiandian.vo.UserDynamicVO;
 import com.yidiandian.vo.UserInfoVO;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -20,7 +20,6 @@ import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-
 import javax.annotation.Resource;
 import javax.persistence.RollbackException;
 import java.util.List;
@@ -42,6 +41,15 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Autowired
     UserHobbyService userHobbyService;
+
+    @Autowired
+    ScenicSpotInfoService scenicSpotInfoService;
+
+    @Autowired
+    private ScenicSpotDetailsService scenicSpotDetailsService;
+
+    @Autowired
+    private ScenicSpotImagesService scenicSpotImagesService;
 
     @ExceptionHandler(RollbackException.class)
     @Override
@@ -70,7 +78,7 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Override
     public Result findUserInfo(String token) {
-        //解析token 获取用户Id
+        log.info("根据token获取用户信息请求参数：{}",token);
         String userId = token;
 
         if (StringUtils.isBlank(userId)){
@@ -81,10 +89,28 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Override
     public Result updateUserInfo(UserInfoVO userInfoVO) {
+        log.info("用户修改自己的个人信息请求参数：{}",JSONUtil.parseObj(userInfoVO));
         int updateUser = userInfoDao.update(structureUpdate(userInfoVO));
         int updateDetail = userInfoDetailsService.updateUserDetails(userInfoVO);
         int updateHobby = userHobbyService.updateUserHobby(userInfoVO);
-        return (updateUser >0 || updateDetail > 0 || updateHobby > 0 ) ? Result.success("操作成功") : Result.error();
+        return (updateUser >0 || updateDetail > 0 || updateHobby > 0 ) ? Result.success("操作成功") : Result.error("操作失败");
+    }
+
+    @Override
+    public Result publishDynamic(UserDynamicVO userDynamicVO) {
+        log.info("用户发布个人动态请求参数：{}", JSONUtil.parseObj(userDynamicVO));
+        Result<List<ScenicSpotInfo>> spotInfoLikeTitle = scenicSpotInfoService.findSpotInfoLikeTitle(userDynamicVO.getTitle());
+        List<ScenicSpotInfo> spotList = spotInfoLikeTitle.getData();
+        //判断平台是否已经录入该景点景区：未录入，则插入三张表。已录入，则插入两张表
+        if (org.apache.commons.collections4.CollectionUtils.isEmpty(spotList)) {
+            int scenicSpotInfoId = scenicSpotInfoService.publishDynamic(userDynamicVO);
+            int insertScenicSpotDetails = scenicSpotDetailsService.publishDynamic(userDynamicVO, scenicSpotInfoId);
+            int insertSpotImages = scenicSpotImagesService.publishDynamic(userDynamicVO, scenicSpotInfoId);
+            return (scenicSpotInfoId > 0 && insertScenicSpotDetails > 0 && insertSpotImages > 0) ? Result.success("操作成功") : Result.error("操作失败");
+        }
+        int insertScenicSpotDetails = scenicSpotDetailsService.publishDynamic(userDynamicVO, spotList.get(0).getId());
+        int insertSpotImages = scenicSpotImagesService.publishDynamic(userDynamicVO, spotList.get(0).getId());
+        return (insertScenicSpotDetails > 0 && insertSpotImages > 0) ? Result.success("操作成功") : Result.error("操作失败");
     }
 
     private UserInfo structureUpdate(UserInfoVO vo){

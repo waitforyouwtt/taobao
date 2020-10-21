@@ -62,7 +62,7 @@ public class ScenicSpotInfoVO implements Serializable {
      */
     private String story;
     /**
-     * 主图
+     * 主图图片url
      */
     private String mainImage;
     /**
@@ -78,15 +78,18 @@ public class ScenicSpotInfoVO implements Serializable {
      */
     private String locationLongitude;
 
+    /**
+     * 附图图片url集合
+     */
     List<ScenicSpotImages> imagesList;
 
     /**
-     * 主图地址
+     * 主图接收文件
      */
     MultipartFile main;
 
     /**
-     * 附图
+     * 附图接收文件
      */
     MultipartFile[] files;
 }

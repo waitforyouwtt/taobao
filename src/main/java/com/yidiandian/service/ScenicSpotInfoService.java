@@ -5,6 +5,7 @@ import com.yidiandian.support.Result;
 import com.yidiandian.view.ScenicSpotInfoView;
 import com.yidiandian.vo.QueryScenicSpotVO;
 import com.yidiandian.vo.ScenicSpotInfoVO;
+import com.yidiandian.vo.UserDynamicVO;
 
 import java.util.List;
 
@@ -62,4 +63,23 @@ public interface ScenicSpotInfoService {
      * @return
      */
     List<ScenicSpotInfoView> findSpotInfo(QueryScenicSpotVO spotVO);
+
+    /**
+     * 根据标题模糊查询
+     */
+    Result<List<ScenicSpotInfo>> findSpotInfoLikeTitle(String title);
+
+    /**
+     * 平台用户发布动态,返回当前插入数据的主键ID
+     * @param userDynamicVO
+     * @return
+     */
+    int publishDynamic(UserDynamicVO userDynamicVO);
+
+    /**
+     * 查询景点景区且根据省份城市分组
+     * @param vo
+     * @return
+     */
+    Result queryScenicSpotGroup(QueryScenicSpotVO vo);
 }

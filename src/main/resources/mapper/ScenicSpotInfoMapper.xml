@@ -146,5 +146,32 @@
     </if>
     </where>
     </select>
+    <select id="findSpotInfoLikeTitle" resultMap="BaseResultMap">
+    select
+    id,platform_unique_code, scenic_spot_name, scenic_spot_describe, province_code, city_code, star_level, hot_level, user_id, create_time, update_time, status, pulish_status
+    from Travel.scenic_spot_info
+    <where>
+        and concat(scenic_spot_name,scenic_spot_describe) LIKE CONCAT ('%',#{title},'%')
+    </where>
+    </select>
+
+    <select id="queryScenicSpotGroup" resultType="com.yidiandian.view.ScenicSpotView">
+        select
+        a.id,
+        a.platform_unique_code platformUniqueCode,
+        a.scenic_spot_name scenicSpotName,
+        a.province_code provinceCode,
+        a.city_code cityCode,
+        b.main_image mainImage
+        from Travel.scenic_spot_info as a left join Travel.scenic_spot_details as b on a.id = b.scenic_spot_info_id
+        where 1 = 1
+        <if test="provinceCode != null and provinceCode != ''">
+            and a.province_code = #{provinceCode}
+        </if>
+        <if test="cityCode != null and cityCode != ''">
+            and a.city_code = #{cityCode}
+        </if>
+        group by a.id,a.platform_unique_code, a.scenic_spot_name,a.province_code, a.city_code,b.main_image
+    </select>
 
 </mapper>
