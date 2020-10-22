@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yidiandian.dao.LocalSpecialtyBusinessDao">
+
+    <resultMap id="BaseResultMap" type="com.yidiandian.entity.LocalSpecialtyBusiness">
+        <!--@Table local_specialty_business-->
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="productCode" column="product_code" jdbcType="VARCHAR"/>
+        <result property="businessId" column="business_id" jdbcType="VARCHAR"/>
+        <result property="businessName" column="business_name" jdbcType="VARCHAR"/>
+        <result property="businessPhone" column="business_phone" jdbcType="VARCHAR"/>
+        <result property="businessAddress" column="business_address" jdbcType="VARCHAR"/>
+        <result property="businessStatus" column="business_status" jdbcType="INTEGER"/>
+        <result property="productHotSell" column="product_hot_sell" jdbcType="VARCHAR"/>
+        <result property="productHotSellPrice" column="product_hot_sell_price" jdbcType="NUMERIC"/>
+        <result property="businessLevel" column="business_level" jdbcType="INTEGER"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="createBy" column="create_by" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="BaseResultMap">
+        select
+          id, product_code, business_id, business_name, business_phone, business_address, business_status, product_hot_sell, product_hot_sell_price, business_level, create_time, update_time, create_by
+        from Travel.local_specialty_business
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="BaseResultMap">
+        select
+          id, product_code, business_id, business_name, business_phone, business_address, business_status, product_hot_sell, product_hot_sell_price, business_level, create_time, update_time, create_by
+        from Travel.local_specialty_business
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="BaseResultMap">
+        select
+          id, product_code, business_id, business_name, business_phone, business_address, business_status, product_hot_sell, product_hot_sell_price, business_level, create_time, update_time, create_by
+        from Travel.local_specialty_business
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="productCode != null and productCode != ''">
+                and product_code = #{productCode}
+            </if>
+            <if test="businessId != null and businessId != ''">
+                and business_id = #{businessId}
+            </if>
+            <if test="businessName != null and businessName != ''">
+                and business_name = #{businessName}
+            </if>
+            <if test="businessPhone != null and businessPhone != ''">
+                and business_phone = #{businessPhone}
+            </if>
+            <if test="businessAddress != null and businessAddress != ''">
+                and business_address = #{businessAddress}
+            </if>
+            <if test="businessStatus != null">
+                and business_status = #{businessStatus}
+            </if>
+            <if test="productHotSell != null and productHotSell != ''">
+                and product_hot_sell = #{productHotSell}
+            </if>
+            <if test="productHotSellPrice != null">
+                and product_hot_sell_price = #{productHotSellPrice}
+            </if>
+            <if test="businessLevel != null">
+                and business_level = #{businessLevel}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+            <if test="createBy != null and createBy != ''">
+                and create_by = #{createBy}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into Travel.local_specialty_business(product_code, business_id, business_name, business_phone, business_address, business_status, product_hot_sell, product_hot_sell_price, business_level, create_time, update_time, create_by)
+        values (#{productCode}, #{businessId}, #{businessName}, #{businessPhone}, #{businessAddress}, #{businessStatus}, #{productHotSell}, #{productHotSellPrice}, #{businessLevel}, #{createTime}, #{updateTime}, #{createBy})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update Travel.local_specialty_business
+        <set>
+            <if test="productCode != null and productCode != ''">
+                product_code = #{productCode},
+            </if>
+            <if test="businessId != null and businessId != ''">
+                business_id = #{businessId},
+            </if>
+            <if test="businessName != null and businessName != ''">
+                business_name = #{businessName},
+            </if>
+            <if test="businessPhone != null and businessPhone != ''">
+                business_phone = #{businessPhone},
+            </if>
+            <if test="businessAddress != null and businessAddress != ''">
+                business_address = #{businessAddress},
+            </if>
+            <if test="businessStatus != null">
+                business_status = #{businessStatus},
+            </if>
+            <if test="productHotSell != null and productHotSell != ''">
+                product_hot_sell = #{productHotSell},
+            </if>
+            <if test="productHotSellPrice != null">
+                product_hot_sell_price = #{productHotSellPrice},
+            </if>
+            <if test="businessLevel != null">
+                business_level = #{businessLevel},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="createBy != null and createBy != ''">
+                create_by = #{createBy},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from Travel.local_specialty_business where id = #{id}
+    </delete>
+
+</mapper>

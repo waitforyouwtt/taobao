@@ -38,3 +38,7 @@
 2020-10-22 16:01:00.175 DEBUG 39577 --- [http-nio-9098-exec-9] c.y.dao.ScenicSpotCommentDao.insert      : ==>  Preparing: insert into Travel.scenic_spot_comment(scenic_spot_info_id, comment, user_id, create_time, update_time) values (?, ?, ?, now(), now()) 
 2020-10-22 16:01:00.187 DEBUG 39577 --- [http-nio-9098-exec-9] c.y.dao.ScenicSpotCommentDao.insert      : ==> Parameters: 1(Integer), 小姐姐好美啊，在哪里呀，我要去偶遇(String), cdCkXwl5(String)
 2020-10-22 16:01:00.193 DEBUG 39577 --- [http-nio-9098-exec-9] c.y.dao.ScenicSpotCommentDao.insert      : <==    Updates: 1
+2020-10-22 16:13:54.335  INFO 39577 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-22 16:13:54.338  INFO 39577 --- [Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-10-22 16:13:54.343  INFO 39577 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-10-22 16:13:54.349  INFO 39577 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
