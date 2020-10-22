@@ -72,4 +72,11 @@ public interface ScenicSpotImagesDao {
      */
     int batchInsertScenicSpotImages(@Param("batchEntities") List<ScenicSpotImages> batchEntities);
 
+    /**
+     * 删除用户动态
+     * @param scenicSpotId
+     * @param userId
+     * @return
+     */
+    int deleteUserDynamic(@Param("scenicSpotId") int scenicSpotId,@Param("userId") String userId);
 }

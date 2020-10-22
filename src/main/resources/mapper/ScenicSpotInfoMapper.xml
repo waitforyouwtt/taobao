@@ -174,4 +174,8 @@
         group by a.id,a.platform_unique_code, a.scenic_spot_name,a.province_code, a.city_code,b.main_image
     </select>
 
+    <delete id="deleteUserDynamic">
+        delete from Travel.scenic_spot_info where user_id = #{userId} and id = #{id}
+    </delete>
+
 </mapper>

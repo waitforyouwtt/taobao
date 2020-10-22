@@ -108,6 +108,11 @@ public class ScenicSpotImagesServiceImpl implements ScenicSpotImagesService {
         }
     }
 
+    @Override
+    public int deleteUserDynamic(UserDynamicVO vo) {
+        return scenicSpotImagesDao.deleteUserDynamic(vo.getScenicSpotId(),vo.getUserId());
+    }
+
     private List<ScenicSpotImages> structurePublishDynamicModel(UserDynamicVO vo,List<String> images, int resultOrder){
         if (CollectionUtils.isEmpty(images)){
             return Collections.EMPTY_LIST;

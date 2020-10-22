@@ -87,4 +87,12 @@ public interface ScenicSpotInfoDao {
      * @return
      */
     List<ScenicSpotView> queryScenicSpotGroup(QueryScenicSpotVO vo);
+
+    /**
+     * 删除用户动态
+     * @param id
+     * @param userId
+     * @return
+     */
+    int deleteUserDynamic(@Param("id") int id,@Param("userId") String userId);
 }

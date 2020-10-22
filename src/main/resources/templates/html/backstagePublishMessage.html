@@ -9,6 +9,12 @@
     <form action="/ScenicSpotInfo/publishMessage" method="post" enctype="multipart/form-data">
         <table border="1">
             <tr>
+                <td>当前用户：</td>
+                <td>
+                    <input type="text" value="admin" id="userId" class="userId" name="userId">
+                </td>
+            </tr>
+            <tr>
                 <td>景点名称：</td>
                 <td><input type="text" name="scenicSpotName"/></td>
             </tr>
@@ -142,7 +148,7 @@
             var selectValue = $('#provinceCode option:selected').val();
             console.info("选择得到的key:",selectKey);
             console.info("选择得到的value:",selectValue);
-
+            formData.append('userId', $("input[name='userId']").val());
             formData.append('scenicSpotName', $("input[name='scenicSpotName']").val());
             formData.append('scenicSpotDescribe', $("input[name='scenicSpotDescribe']").val());
             formData.append('provinceCode', $('#provinceCode option:selected').val());

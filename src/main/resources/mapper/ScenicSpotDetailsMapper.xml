@@ -124,4 +124,8 @@
         delete from Travel.scenic_spot_details where id = #{id}
     </delete>
 
+    <delete id="deleteUserDynamic">
+      delete from Travel.scenic_spot_details where scenic_spot_info_id = #{scenicSpotId} and user_id = #{userId}
+    </delete>
+
 </mapper>

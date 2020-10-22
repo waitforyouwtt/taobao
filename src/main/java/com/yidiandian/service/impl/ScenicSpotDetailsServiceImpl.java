@@ -94,6 +94,11 @@ public class ScenicSpotDetailsServiceImpl implements ScenicSpotDetailsService {
         return scenicSpotDetailsDao.insert(structurePublishDynamicModel(userDynamicVO,scenicSpotInfoId));
     }
 
+    @Override
+    public int deleteUserDynamic(UserDynamicVO vo) {
+        return scenicSpotDetailsDao.deleteUserDynamic(vo.getScenicSpotId(),vo.getUserId());
+    }
+
     private ScenicSpotDetails structurePublishDynamicModel(UserDynamicVO vo,int scenicSpotInfoId){
         ScenicSpotDetails info = new ScenicSpotDetails();
         info.setScenicSpotInfoId(scenicSpotInfoId);

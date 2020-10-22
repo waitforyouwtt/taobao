@@ -198,6 +198,11 @@ public class ScenicSpotInfoServiceImpl implements ScenicSpotInfoService {
         return Result.success(scenicSpotViews);
     }
 
+    @Override
+    public int deleteUserDynamic(UserDynamicVO vo) {
+        return scenicSpotInfoDao.deleteUserDynamic(vo.getScenicSpotId(),vo.getUserId());
+    }
+
     private ScenicSpotInfo structurePublishDynamicModel(UserDynamicVO vo){
         ScenicSpotInfo info = new ScenicSpotInfo();
         String uniqueCode = GenerateCodeUtils.generatePlatformUniqueCode(vo.getProvinceCode(), vo.getCityCode());

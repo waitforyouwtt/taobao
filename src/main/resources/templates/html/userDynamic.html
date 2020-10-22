@@ -8,7 +8,12 @@
 <center>
     <form action="/user/publishDynamic" method="post" enctype="multipart/form-data">
         <table border="1">
-
+            <tr>
+                <td>当前用户：</td>
+                <td>
+                    <input type="text" value="admin" id="userId" class="userId" name="userId">
+                </td>
+            </tr>
             <tr>
                 <td>所在省份：</td>
                 <td>
@@ -119,7 +124,7 @@
 
             formData.append('provinceCode', $('#provinceCode option:selected').val());
             formData.append('cityCode', $('#cityCode option:selected').val());
-
+            formData.append('userId',$("input[name='userId']").val());
             formData.append('title', $("input[name='title']").val());
 
             formData.append('main', document.getElementById("main").files[0]);

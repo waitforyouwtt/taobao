@@ -2,10 +2,10 @@ package com.yidiandian.controller.user;
 
 import com.yidiandian.entity.TravelLog;
 import com.yidiandian.enums.EmailStatusEnum;
-import com.yidiandian.service.TravelLogService;
-import com.yidiandian.service.UserInfoDetailsService;
-import com.yidiandian.service.UserInfoService;
+import com.yidiandian.service.*;
 import com.yidiandian.support.Result;
+import com.yidiandian.vo.ScenicSpotCommentVO;
+import com.yidiandian.vo.ScenicSpotStarVO;
 import com.yidiandian.vo.UserDynamicVO;
 import com.yidiandian.vo.UserInfoVO;
 import io.swagger.annotations.ApiOperation;
@@ -29,6 +29,12 @@ public class UserInfoController {
 
     @Autowired
     TravelLogService travelLogService;
+
+    @Autowired
+    ScenicSpotStarService scenicSpotStarService;
+
+    @Autowired
+    ScenicSpotCommentService scenicSpotCommentService;
 
     @ApiOperation(value = "注册新用户",notes = "=用户信息")
     @PostMapping("/saveUserInfo")
@@ -62,7 +68,7 @@ public class UserInfoController {
       return userInfoService.updateUserInfo(vo);
     }
 
-    @ApiOperation(value = "后台景点景区查询页面",notes = "=动态信息")
+    @ApiOperation(value = "用户前往发布动态页面",notes = "=动态信息")
     @GetMapping("/toUserDynamic")
     public String toUserDynamic(){
         return "/html/userDynamic";
@@ -74,4 +80,40 @@ public class UserInfoController {
     public Result publishDynamic(@ModelAttribute UserDynamicVO userDynamicVO){
         return userInfoService.publishDynamic(userDynamicVO);
     }
+
+    @ApiOperation(value = "用户删除个人动态信息",notes = "=用户信息")
+    @PostMapping("/deleteDynamic")
+    @ResponseBody
+    public Result deleteDynamicById(@RequestBody UserDynamicVO vo){
+        return userInfoService.deleteDynamic(vo);
+    }
+
+    @ApiOperation(value = "用户对某条个人动态点赞",notes = "=用户信息")
+    @PostMapping("/dynamicStar")
+    @ResponseBody
+    public Result dynamicStar(@RequestBody ScenicSpotStarVO vo){
+        return scenicSpotStarService.dynamicStar(vo);
+    }
+
+    @ApiOperation(value = "用户对浏览的动态取消点赞",notes = "=用户信息")
+    @PostMapping("/cancelDynamicStar")
+    @ResponseBody
+    public Result cancelDynamicStar(@RequestBody ScenicSpotStarVO vo){
+        return scenicSpotStarService.cancelDynamicStar(vo);
+    }
+
+    @ApiOperation(value = "用户对浏览的动态评论",notes = "=用户信息")
+    @PostMapping("/dynamicComment")
+    @ResponseBody
+    public Result dynamicComment(@RequestBody ScenicSpotCommentVO vo){
+        return scenicSpotCommentService.dynamicComment(vo);
+    }
+
+    @ApiOperation(value = "用户对浏览的动态删除评论",notes = "=用户信息")
+    @PostMapping("/cancelDynamicComment")
+    @ResponseBody
+    public Result cancelDynamicComment(@RequestBody ScenicSpotCommentVO vo){
+        return scenicSpotCommentService.cancelDynamicComment(vo);
+    }
+
 }

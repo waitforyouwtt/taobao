@@ -10,6 +10,7 @@ import com.yidiandian.service.*;
 import com.yidiandian.support.Result;
 import com.yidiandian.utils.GenerateCodeUtils;
 import com.yidiandian.view.UserInfoView;
+import com.yidiandian.vo.ScenicSpotStarVO;
 import com.yidiandian.vo.UserDynamicVO;
 import com.yidiandian.vo.UserInfoVO;
 import lombok.extern.slf4j.Slf4j;
@@ -111,6 +112,14 @@ public class UserInfoServiceImpl implements UserInfoService {
         int insertScenicSpotDetails = scenicSpotDetailsService.publishDynamic(userDynamicVO, spotList.get(0).getId());
         int insertSpotImages = scenicSpotImagesService.publishDynamic(userDynamicVO, spotList.get(0).getId());
         return (insertScenicSpotDetails > 0 && insertSpotImages > 0) ? Result.success("操作成功") : Result.error("操作失败");
+    }
+
+    @Override
+    public Result deleteDynamic(UserDynamicVO vo) {
+        int deleteSpot = scenicSpotInfoService.deleteUserDynamic(vo);
+        int deleteSpotDetails = scenicSpotDetailsService.deleteUserDynamic(vo);
+        int deleteImages = scenicSpotImagesService.deleteUserDynamic(vo);
+        return (deleteSpot > 0 || deleteSpotDetails > 0 || deleteImages >0) ? Result.success("操作成功") : Result.error("操作失败");
     }
 
     private UserInfo structureUpdate(UserInfoVO vo){

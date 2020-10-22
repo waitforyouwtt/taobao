@@ -20,6 +20,11 @@ public class UserDynamicVO implements Serializable {
     private String userId;
 
     /**
+     * 景点景区ID
+     */
+    private int scenicSpotId;
+
+    /**
      * 标题
      */
     private String title;

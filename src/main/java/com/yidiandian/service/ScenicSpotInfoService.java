@@ -82,4 +82,10 @@ public interface ScenicSpotInfoService {
      * @return
      */
     Result queryScenicSpotGroup(QueryScenicSpotVO vo);
+
+    /**
+     * 删除用户动态
+     * @return
+     */
+    int deleteUserDynamic(UserDynamicVO vo);
 }

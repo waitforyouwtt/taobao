@@ -95,3 +95,9 @@
   "userNick": "云澜哥哥",
   "wechat": "17621007255"
 }
+
+"删除动态" ：{
+         
+          "scenicSpotId": 6,
+          "userId": "admin"
+        }

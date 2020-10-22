@@ -1,18 +1,19 @@
 package com.yidiandian.dao;
 
-import com.yidiandian.entity.ScenicSpotDetails;
+import com.yidiandian.entity.ScenicSpotComment;
+import com.yidiandian.support.Result;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * 景点景区详情表(ScenicSpotDetails)表数据库访问层
+ * 景点景区评论表(ScenicSpotComment)表数据库访问层
  *
  * @author makejava
- * @since 2020-10-15 17:09:50
+ * @since 2020-10-22 11:00:17
  */
 @Mapper
-public interface ScenicSpotDetailsDao {
+public interface ScenicSpotCommentDao {
 
     /**
      * 通过ID查询单条数据
@@ -20,7 +21,7 @@ public interface ScenicSpotDetailsDao {
      * @param id 主键
      * @return 实例对象
      */
-    ScenicSpotDetails queryById(Integer id);
+    ScenicSpotComment queryById(Integer id);
 
     /**
      * 查询指定行数据
@@ -29,32 +30,32 @@ public interface ScenicSpotDetailsDao {
      * @param limit 查询条数
      * @return 对象列表
      */
-    List<ScenicSpotDetails> queryAllByLimit(@Param("offset") int offset, @Param("limit") int limit);
+    List<ScenicSpotComment> queryAllByLimit(@Param("offset") int offset, @Param("limit") int limit);
 
 
     /**
      * 通过实体作为筛选条件查询
      *
-     * @param scenicSpotDetails 实例对象
+     * @param scenicSpotComment 实例对象
      * @return 对象列表
      */
-    List<ScenicSpotDetails> queryAll(ScenicSpotDetails scenicSpotDetails);
+    List<ScenicSpotComment> queryAll(ScenicSpotComment scenicSpotComment);
 
     /**
      * 新增数据
      *
-     * @param scenicSpotDetails 实例对象
+     * @param scenicSpotComment 实例对象
      * @return 影响行数
      */
-    int insert(ScenicSpotDetails scenicSpotDetails);
+    int insert(ScenicSpotComment scenicSpotComment);
 
     /**
      * 修改数据
      *
-     * @param scenicSpotDetails 实例对象
+     * @param scenicSpotComment 实例对象
      * @return 影响行数
      */
-    int update(ScenicSpotDetails scenicSpotDetails);
+    int update(ScenicSpotComment scenicSpotComment);
 
     /**
      * 通过主键删除数据
@@ -65,10 +66,10 @@ public interface ScenicSpotDetailsDao {
     int deleteById(Integer id);
 
     /**
-     * 删除用户动态
-     * @param scenicSpotId
+     * 用户对浏览的动态删除评论
+     * @param id
      * @param userId
      * @return
      */
-    int deleteUserDynamic(@Param("scenicSpotId") int scenicSpotId,@Param("userId") String userId);
+    int deleteByUserIdAndCommentId(@Param("id") Integer id,@Param("userId") String userId);
 }

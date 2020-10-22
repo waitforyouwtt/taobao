@@ -3,6 +3,7 @@ package com.yidiandian.service;
 import com.yidiandian.entity.UserInfo;
 import com.yidiandian.support.Result;
 import com.yidiandian.view.UserInfoView;
+import com.yidiandian.vo.ScenicSpotStarVO;
 import com.yidiandian.vo.UserDynamicVO;
 import com.yidiandian.vo.UserInfoVO;
 
@@ -46,4 +47,12 @@ public interface UserInfoService {
      * @return
      */
     Result publishDynamic(UserDynamicVO userDynamicVO);
+
+    /**
+     * 用户删除个人动态信息
+     * @param vo
+     * @return
+     */
+    Result deleteDynamic(UserDynamicVO vo);
+
 }

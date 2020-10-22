@@ -59,4 +59,11 @@ public interface ScenicSpotImagesService {
      * @return
      */
     int publishDynamic(UserDynamicVO userDynamicVO,int scenicSpotInfoId);
+
+    /**
+     * 删除用户动态
+     * @param vo
+     * @return
+     */
+    int deleteUserDynamic(UserDynamicVO vo);
 }
