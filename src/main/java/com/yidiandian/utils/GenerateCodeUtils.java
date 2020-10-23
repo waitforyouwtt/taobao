@@ -19,7 +19,7 @@ public class GenerateCodeUtils {
     public static String generatePlatformUniqueCode(String provinceCode,String cityCode){
         String code = RandomStringUtils.random(5, "abcdefghijklmnopqrstuvwxyz0123456789");
         String uniqueCode = provinceCode.concat("_").concat(cityCode).concat("_").concat(code);
-        log.info("生成的平台景区景点唯一码是：{}",uniqueCode);
+        log.info("生成的平台唯一码是：{}",uniqueCode);
         return uniqueCode;
     }
 

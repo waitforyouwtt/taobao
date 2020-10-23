@@ -11,7 +11,7 @@ import com.yidiandian.vo.LocalSpecialtyInfoVO;
 public interface LocalSpecialtyInfoService {
 
     /**
-     *
+     * 后台创建特产商品
      * @param vo
      * @return
      */
