@@ -1,9 +1,15 @@
 package com.yidiandian.service.impl;
 
 import cn.hutool.json.JSONUtil;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.yidiandian.dao.ScenicSpotImagesDao;
 import com.yidiandian.entity.ScenicSpotImages;
 import com.yidiandian.entity.ScenicSpotInfo;
 import com.yidiandian.dao.ScenicSpotInfoDao;
+import com.yidiandian.page.PageRequest;
+import com.yidiandian.page.PageResult;
+import com.yidiandian.page.PageUtils;
 import com.yidiandian.service.ScenicSpotDetailsService;
 import com.yidiandian.service.ScenicSpotImagesService;
 import com.yidiandian.service.ScenicSpotInfoService;
@@ -43,6 +49,9 @@ public class ScenicSpotInfoServiceImpl implements ScenicSpotInfoService {
 
     @Autowired
     private ScenicSpotImagesService scenicSpotImagesService;
+
+    @Resource
+    private ScenicSpotImagesDao scenicSpotImagesDao;
 
     /**
      * 通过ID查询单条数据
@@ -177,6 +186,31 @@ public class ScenicSpotInfoServiceImpl implements ScenicSpotInfoService {
         log.info("查看用户发表的动态请求参数：{}",JSONUtil.parseObj(spotVO));
 
         return null;
+    }
+
+    @Override
+    public Result findSpotInfoPage(PageRequest pageRequest) {
+       // scenicSpotInfoDao.findSpotInfoPage();
+
+        PageResult pageResult = PageUtils.getPageResult(pageRequest, getPageInfo(pageRequest));
+
+        return Result.success(pageResult);
+    }
+
+    /**
+     * 调用分页插件完成分页
+     * @param pageRequest
+     * @return
+     */
+    private PageInfo<ScenicSpotImages> getPageInfo(PageRequest pageRequest) {
+        int pageNum = pageRequest.getPageNum();
+        int pageSize = pageRequest.getPageSize();
+        PageHelper.startPage(pageNum, pageSize);
+
+        ScenicSpotImages image = new ScenicSpotImages ();
+        List<ScenicSpotImages> images = scenicSpotImagesDao.queryAll(image);
+
+        return new PageInfo<ScenicSpotImages>(images);
     }
 
     @Override

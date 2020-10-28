@@ -1,5 +1,7 @@
 package com.yidiandian.controller.backstage;
 
+import com.yidiandian.page.PageRequest;
+import com.yidiandian.page.PageResult;
 import com.yidiandian.service.ScenicSpotInfoService;
 import com.yidiandian.support.Result;
 import com.yidiandian.view.ScenicSpotInfoView;
@@ -56,5 +58,12 @@ public class ScenicSpotInfoController {
     public String findSpotInfo(@RequestBody QueryScenicSpotVO spotVO){
         List<ScenicSpotInfoView> viewList = scenicSpotInfoService.findSpotInfo(spotVO);
         return "success";
+    }
+
+    @ApiOperation(value = "用户查询动态且分页", notes = "动态信息")
+    @PostMapping("/findDynamicPage")
+    @ResponseBody
+    public Result findDynamicPage(@RequestBody PageRequest pageRequest){
+        return scenicSpotInfoService.findSpotInfoPage(pageRequest);
     }
 }

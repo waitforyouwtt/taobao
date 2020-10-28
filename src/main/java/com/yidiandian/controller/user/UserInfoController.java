@@ -2,6 +2,7 @@ package com.yidiandian.controller.user;
 
 import com.yidiandian.entity.TravelLog;
 import com.yidiandian.enums.EmailStatusEnum;
+import com.yidiandian.page.PageRequest;
 import com.yidiandian.service.*;
 import com.yidiandian.support.Result;
 import com.yidiandian.vo.ScenicSpotCommentVO;

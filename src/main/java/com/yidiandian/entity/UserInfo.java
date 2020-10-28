@@ -1,7 +1,6 @@
 package com.yidiandian.entity;
 
 import com.yidiandian.enums.GenderEnum;
-import com.yidiandian.enums.HobbyEnum;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;

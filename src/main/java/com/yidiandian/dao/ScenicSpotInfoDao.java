@@ -3,6 +3,7 @@ package com.yidiandian.dao;
 import com.yidiandian.entity.ScenicSpotInfo;
 import com.yidiandian.view.ScenicSpotInfoView;
 import com.yidiandian.view.ScenicSpotView;
+import com.yidiandian.view.UserScenicSpotView;
 import com.yidiandian.vo.QueryScenicSpotVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -95,4 +96,10 @@ public interface ScenicSpotInfoDao {
      * @return
      */
     int deleteUserDynamic(@Param("id") int id,@Param("userId") String userId);
+
+    /**
+     * 查询用户动态且分页
+     * @return
+     */
+    List<UserScenicSpotView> findSpotInfoPage();
 }

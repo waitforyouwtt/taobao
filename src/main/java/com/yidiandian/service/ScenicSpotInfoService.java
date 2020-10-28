@@ -1,6 +1,7 @@
 package com.yidiandian.service;
 
 import com.yidiandian.entity.ScenicSpotInfo;
+import com.yidiandian.page.PageRequest;
 import com.yidiandian.support.Result;
 import com.yidiandian.view.ScenicSpotInfoView;
 import com.yidiandian.vo.QueryScenicSpotVO;
@@ -63,6 +64,8 @@ public interface ScenicSpotInfoService {
      * @return
      */
     List<ScenicSpotInfoView> findSpotInfo(QueryScenicSpotVO spotVO);
+
+    Result findSpotInfoPage(PageRequest pageRequest);
 
     /**
      * 根据标题模糊查询
