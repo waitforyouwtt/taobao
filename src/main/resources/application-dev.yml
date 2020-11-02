@@ -9,16 +9,16 @@ spring:
       hibernate:
         ddl-auto: update
       show-sql: true
-
+  #Mac的redis
   redis:
-    host: 81.68.86.66
+    host: 127.0.0.1
     port: 6379
     jedis:
       pool:
         max-active: 8
         max-wait: -1
         max-idle: 500
-    password: 123456
+    password:
 
   thymeleaf:
    # prefix: classpath:/templates

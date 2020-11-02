@@ -1,0 +1,238 @@
+2020-11-02 10:49:41.554  INFO 18782 --- [main] com.yidiandian.TaobaoApplicationTests    : Starting TaobaoApplicationTests on FarbendeMacBook-Pro.local with PID 18782 (started by farben in /Users/farben/Documents/IdeaProjects/ydd/taobao)
+2020-11-02 10:49:41.557  INFO 18782 --- [main] com.yidiandian.TaobaoApplicationTests    : The following profiles are active: dev
+2020-11-02 10:49:42.540  INFO 18782 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-02 10:49:42.543  INFO 18782 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-11-02 10:49:42.708  INFO 18782 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 153ms. Found 1 repository interfaces.
+2020-11-02 10:49:42.722  INFO 18782 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-02 10:49:42.723  INFO 18782 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-11-02 10:49:42.739  INFO 18782 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.yidiandian.mapper.CategoriesMapper.
+2020-11-02 10:49:42.739  INFO 18782 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8ms. Found 0 repository interfaces.
+2020-11-02 10:49:43.211  INFO 18782 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a75f2b3f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 10:49:43.358  INFO 18782 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'redisConfig' of type [com.yidiandian.utils.RedisConfig$$EnhancerBySpringCGLIB$$84fc0397] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 10:49:43.948  INFO 18782 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-11-02 10:49:44.457  INFO 18782 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-11-02 10:49:44.543  INFO 18782 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-11-02 10:49:44.643  INFO 18782 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2020-11-02 10:49:44.645  INFO 18782 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-11-02 10:49:44.936  INFO 18782 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-11-02 10:49:45.110  INFO 18782 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-11-02 10:49:45.951  INFO 18782 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-02 10:49:47.292  WARN 18782 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-02 10:49:48.128  INFO 18782 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-02 10:49:48.306  WARN 18782 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-11-02 10:49:48.981  INFO 18782 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-11-02 10:49:49.004  INFO 18782 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-11-02 10:49:49.017  INFO 18782 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-11-02 10:49:49.370  INFO 18782 --- [main] com.yidiandian.TaobaoApplicationTests    : Started TaobaoApplicationTests in 8.249 seconds (JVM running for 9.367)
+2020-11-02 10:49:49.558  INFO 18782 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-11-02 10:49:49.559  INFO 18782 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-11-02 10:49:49.699  INFO 18782 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-02 10:49:49.701  INFO 18782 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-02 10:49:49.703  INFO 18782 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-11-02 10:49:49.713  INFO 18782 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-11-02 10:50:32.473  INFO 18936 --- [main] com.yidiandian.TaobaoApplicationTests    : Starting TaobaoApplicationTests on FarbendeMacBook-Pro.local with PID 18936 (started by farben in /Users/farben/Documents/IdeaProjects/ydd/taobao)
+2020-11-02 10:50:32.474  INFO 18936 --- [main] com.yidiandian.TaobaoApplicationTests    : The following profiles are active: dev
+2020-11-02 10:50:33.616  INFO 18936 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-02 10:50:33.618  INFO 18936 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-11-02 10:50:33.767  INFO 18936 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 140ms. Found 1 repository interfaces.
+2020-11-02 10:50:33.779  INFO 18936 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-02 10:50:33.780  INFO 18936 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-11-02 10:50:33.801  INFO 18936 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.yidiandian.mapper.CategoriesMapper.
+2020-11-02 10:50:33.801  INFO 18936 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13ms. Found 0 repository interfaces.
+2020-11-02 10:50:34.444  INFO 18936 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8d53d102] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 10:50:34.578  INFO 18936 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'redisConfig' of type [com.yidiandian.utils.RedisConfig$$EnhancerBySpringCGLIB$$6af0a95a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 10:50:35.014  INFO 18936 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-11-02 10:50:35.369  INFO 18936 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-11-02 10:50:35.429  INFO 18936 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-11-02 10:50:35.497  INFO 18936 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2020-11-02 10:50:35.499  INFO 18936 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-11-02 10:50:35.691  INFO 18936 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-11-02 10:50:35.884  INFO 18936 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-11-02 10:50:36.587  INFO 18936 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-02 10:50:37.811  WARN 18936 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-02 10:50:38.421  INFO 18936 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-02 10:50:38.540  WARN 18936 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-11-02 10:50:38.982  INFO 18936 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-11-02 10:50:39.002  INFO 18936 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-11-02 10:50:39.018  INFO 18936 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-11-02 10:50:39.335  INFO 18936 --- [main] com.yidiandian.TaobaoApplicationTests    : Started TaobaoApplicationTests in 7.305 seconds (JVM running for 8.016)
+2020-11-02 10:50:39.488  INFO 18936 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-11-02 10:50:39.489  INFO 18936 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-11-02 10:50:39.632  INFO 18936 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-02 10:50:39.635  INFO 18936 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-02 10:50:39.640  INFO 18936 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-11-02 10:50:39.651  INFO 18936 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-11-02 10:51:28.895  INFO 19090 --- [main] com.yidiandian.TaobaoApplicationTests    : Starting TaobaoApplicationTests on FarbendeMacBook-Pro.local with PID 19090 (started by farben in /Users/farben/Documents/IdeaProjects/ydd/taobao)
+2020-11-02 10:51:28.896  INFO 19090 --- [main] com.yidiandian.TaobaoApplicationTests    : The following profiles are active: dev
+2020-11-02 10:51:29.803  INFO 19090 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-02 10:51:29.805  INFO 19090 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-11-02 10:51:29.916  INFO 19090 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 104ms. Found 1 repository interfaces.
+2020-11-02 10:51:29.930  INFO 19090 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-02 10:51:29.931  INFO 19090 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-11-02 10:51:29.947  INFO 19090 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.yidiandian.mapper.CategoriesMapper.
+2020-11-02 10:51:29.947  INFO 19090 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10ms. Found 0 repository interfaces.
+2020-11-02 10:51:30.437  INFO 19090 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$45a28caa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 10:51:30.559  INFO 19090 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'redisConfig' of type [com.yidiandian.utils.RedisConfig$$EnhancerBySpringCGLIB$$233f6502] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 10:51:30.976  INFO 19090 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-11-02 10:51:31.317  INFO 19090 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-11-02 10:51:31.372  INFO 19090 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-11-02 10:51:31.436  INFO 19090 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2020-11-02 10:51:31.438  INFO 19090 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-11-02 10:51:31.612  INFO 19090 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-11-02 10:51:31.789  INFO 19090 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-11-02 10:51:32.422  INFO 19090 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-02 10:51:33.587  WARN 19090 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-02 10:51:34.189  INFO 19090 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-02 10:51:34.307  WARN 19090 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-11-02 10:51:34.674  INFO 19090 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-11-02 10:51:34.692  INFO 19090 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-11-02 10:51:34.706  INFO 19090 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-11-02 10:51:35.038  INFO 19090 --- [main] com.yidiandian.TaobaoApplicationTests    : Started TaobaoApplicationTests in 6.52 seconds (JVM running for 7.209)
+2020-11-02 10:51:35.202  INFO 19090 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-11-02 10:51:35.203  INFO 19090 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-11-02 10:51:35.347  INFO 19090 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-02 10:51:35.350  INFO 19090 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-02 10:51:35.353  INFO 19090 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-11-02 10:51:35.360  INFO 19090 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-11-02 10:52:29.609  INFO 19277 --- [main] com.yidiandian.TaobaoApplicationTests    : Starting TaobaoApplicationTests on FarbendeMacBook-Pro.local with PID 19277 (started by farben in /Users/farben/Documents/IdeaProjects/ydd/taobao)
+2020-11-02 10:52:29.611  INFO 19277 --- [main] com.yidiandian.TaobaoApplicationTests    : The following profiles are active: dev
+2020-11-02 10:52:30.898  INFO 19277 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-02 10:52:30.901  INFO 19277 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-11-02 10:52:31.043  INFO 19277 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 134ms. Found 1 repository interfaces.
+2020-11-02 10:52:31.059  INFO 19277 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-02 10:52:31.060  INFO 19277 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-11-02 10:52:31.080  INFO 19277 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.yidiandian.mapper.CategoriesMapper.
+2020-11-02 10:52:31.081  INFO 19277 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14ms. Found 0 repository interfaces.
+2020-11-02 10:52:31.849  INFO 19277 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$23de788e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 10:52:32.036  INFO 19277 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'redisConfig' of type [com.yidiandian.utils.RedisConfig$$EnhancerBySpringCGLIB$$17b50e6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 10:52:32.780  INFO 19277 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-11-02 10:52:33.313  INFO 19277 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-11-02 10:52:33.393  INFO 19277 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-11-02 10:52:33.467  INFO 19277 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2020-11-02 10:52:33.469  INFO 19277 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-11-02 10:52:33.647  INFO 19277 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-11-02 10:52:33.829  INFO 19277 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-11-02 10:52:34.654  INFO 19277 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-02 10:52:36.670  WARN 19277 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-02 10:52:37.614  INFO 19277 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-02 10:52:37.835  WARN 19277 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-11-02 10:52:38.503  INFO 19277 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-11-02 10:52:38.522  INFO 19277 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-11-02 10:52:38.537  INFO 19277 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-11-02 10:52:38.900  INFO 19277 --- [main] com.yidiandian.TaobaoApplicationTests    : Started TaobaoApplicationTests in 9.782 seconds (JVM running for 11.282)
+2020-11-02 10:52:45.044  INFO 19277 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-11-02 10:52:45.051  INFO 19277 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-11-02 10:52:50.420  INFO 19277 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-02 10:52:50.424  INFO 19277 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-02 10:52:50.428  INFO 19277 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-11-02 10:52:50.452  INFO 19277 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-11-02 10:53:52.465  INFO 19501 --- [main] com.yidiandian.TaobaoApplicationTests    : Starting TaobaoApplicationTests on FarbendeMacBook-Pro.local with PID 19501 (started by farben in /Users/farben/Documents/IdeaProjects/ydd/taobao)
+2020-11-02 10:53:52.466  INFO 19501 --- [main] com.yidiandian.TaobaoApplicationTests    : The following profiles are active: dev
+2020-11-02 10:53:53.328  INFO 19501 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-02 10:53:53.330  INFO 19501 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-11-02 10:53:53.458  INFO 19501 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 120ms. Found 1 repository interfaces.
+2020-11-02 10:53:53.469  INFO 19501 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-02 10:53:53.471  INFO 19501 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-11-02 10:53:53.489  INFO 19501 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.yidiandian.mapper.CategoriesMapper.
+2020-11-02 10:53:53.489  INFO 19501 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11ms. Found 0 repository interfaces.
+2020-11-02 10:53:54.019  INFO 19501 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$db937e0b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 10:53:54.178  INFO 19501 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'redisConfig' of type [com.yidiandian.utils.RedisConfig$$EnhancerBySpringCGLIB$$b9305663] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 10:53:54.737  INFO 19501 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-11-02 10:53:55.191  INFO 19501 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-11-02 10:53:55.266  INFO 19501 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-11-02 10:53:55.329  INFO 19501 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2020-11-02 10:53:55.330  INFO 19501 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-11-02 10:53:55.543  INFO 19501 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-11-02 10:53:55.710  INFO 19501 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-11-02 10:53:56.511  INFO 19501 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-02 10:53:58.069  WARN 19501 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-02 10:53:58.933  INFO 19501 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-02 10:53:59.129  WARN 19501 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-11-02 10:53:59.682  INFO 19501 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-11-02 10:53:59.700  INFO 19501 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-11-02 10:53:59.715  INFO 19501 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-11-02 10:54:00.060  INFO 19501 --- [main] com.yidiandian.TaobaoApplicationTests    : Started TaobaoApplicationTests in 8.009 seconds (JVM running for 8.936)
+2020-11-02 10:54:04.968  INFO 19501 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-11-02 10:54:04.975  INFO 19501 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-11-02 10:54:07.499  INFO 19501 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-02 10:54:07.503  INFO 19501 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-02 10:54:07.505  INFO 19501 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-11-02 10:54:07.514  INFO 19501 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-11-02 11:00:23.208  INFO 20034 --- [main] com.yidiandian.RedisTests                : Starting RedisTests on FarbendeMacBook-Pro.local with PID 20034 (started by farben in /Users/farben/Documents/IdeaProjects/ydd/taobao)
+2020-11-02 11:00:23.209  INFO 20034 --- [main] com.yidiandian.RedisTests                : The following profiles are active: dev
+2020-11-02 11:00:24.095  INFO 20034 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-02 11:00:24.097  INFO 20034 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-11-02 11:00:24.224  INFO 20034 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 120ms. Found 1 repository interfaces.
+2020-11-02 11:00:24.237  INFO 20034 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-02 11:00:24.238  INFO 20034 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-11-02 11:00:24.255  INFO 20034 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.yidiandian.mapper.CategoriesMapper.
+2020-11-02 11:00:24.255  INFO 20034 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10ms. Found 0 repository interfaces.
+2020-11-02 11:00:24.900  INFO 20034 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7b4f34cf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 11:00:25.049  INFO 20034 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'redisConfig' of type [com.yidiandian.utils.RedisConfig$$EnhancerBySpringCGLIB$$58ec0d27] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 11:00:25.654  INFO 20034 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-11-02 11:00:26.075  INFO 20034 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-11-02 11:00:26.145  INFO 20034 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-11-02 11:00:26.214  INFO 20034 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2020-11-02 11:00:26.216  INFO 20034 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-11-02 11:00:26.412  INFO 20034 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-11-02 11:00:26.588  INFO 20034 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-11-02 11:00:27.253  INFO 20034 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-02 11:00:28.403  WARN 20034 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-02 11:00:29.014  INFO 20034 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-02 11:00:29.162  WARN 20034 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-11-02 11:00:29.586  INFO 20034 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-11-02 11:00:29.602  INFO 20034 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-11-02 11:00:29.616  INFO 20034 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-11-02 11:00:29.934  INFO 20034 --- [main] com.yidiandian.RedisTests                : Started RedisTests in 7.107 seconds (JVM running for 7.893)
+2020-11-02 11:00:30.133  INFO 20034 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-11-02 11:00:30.134  INFO 20034 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-11-02 11:00:30.261  INFO 20034 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-02 11:00:30.264  INFO 20034 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-02 11:00:30.267  INFO 20034 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-11-02 11:00:30.277  INFO 20034 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-11-02 11:01:09.781  INFO 20047 --- [main] com.yidiandian.RedisTests                : Starting RedisTests on FarbendeMacBook-Pro.local with PID 20047 (started by farben in /Users/farben/Documents/IdeaProjects/ydd/taobao)
+2020-11-02 11:01:09.782  INFO 20047 --- [main] com.yidiandian.RedisTests                : The following profiles are active: dev
+2020-11-02 11:01:10.697  INFO 20047 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-02 11:01:10.699  INFO 20047 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-11-02 11:01:10.824  INFO 20047 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 117ms. Found 1 repository interfaces.
+2020-11-02 11:01:10.832  INFO 20047 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-02 11:01:10.833  INFO 20047 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-11-02 11:01:10.847  INFO 20047 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.yidiandian.mapper.CategoriesMapper.
+2020-11-02 11:01:10.847  INFO 20047 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9ms. Found 0 repository interfaces.
+2020-11-02 11:01:11.357  INFO 20047 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$741a4aad] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 11:01:11.473  INFO 20047 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'redisConfig' of type [com.yidiandian.utils.RedisConfig$$EnhancerBySpringCGLIB$$51b72305] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 11:01:11.887  INFO 20047 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-11-02 11:01:12.256  INFO 20047 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-11-02 11:01:12.325  INFO 20047 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-11-02 11:01:12.404  INFO 20047 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2020-11-02 11:01:12.405  INFO 20047 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-11-02 11:01:12.645  INFO 20047 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-11-02 11:01:12.811  INFO 20047 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-11-02 11:01:13.521  INFO 20047 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-02 11:01:14.827  WARN 20047 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-02 11:01:15.466  INFO 20047 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-02 11:01:15.595  WARN 20047 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-11-02 11:01:16.048  INFO 20047 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-11-02 11:01:16.066  INFO 20047 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-11-02 11:01:16.083  INFO 20047 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-11-02 11:01:16.418  INFO 20047 --- [main] com.yidiandian.RedisTests                : Started RedisTests in 7.043 seconds (JVM running for 7.729)
+2020-11-02 11:01:16.581  INFO 20047 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-11-02 11:01:16.582  INFO 20047 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-11-02 11:01:16.733  INFO 20047 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-02 11:01:16.738  INFO 20047 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-02 11:01:16.740  INFO 20047 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-11-02 11:01:16.746  INFO 20047 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
