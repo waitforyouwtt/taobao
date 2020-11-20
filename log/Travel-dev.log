@@ -1,0 +1,82 @@
+2020-11-20 19:26:38.544  INFO 93175 --- [main] com.yidiandian.TaobaoApplication         : Starting TaobaoApplication on FarbendeMacBook-Pro.local with PID 93175 (/Users/farben/Documents/IdeaProjects/ydd/taobao/target/classes started by farben in /Users/farben/Documents/IdeaProjects/ydd/taobao)
+2020-11-20 19:26:38.546  INFO 93175 --- [main] com.yidiandian.TaobaoApplication         : The following profiles are active: dev
+2020-11-20 19:26:39.418  INFO 93175 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 19:26:39.418  INFO 93175 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-11-20 19:26:39.480  INFO 93175 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53ms. Found 1 repository interfaces.
+2020-11-20 19:26:39.492  INFO 93175 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 19:26:39.493  INFO 93175 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-11-20 19:26:39.510  INFO 93175 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.yidiandian.mapper.CategoriesMapper.
+2020-11-20 19:26:39.510  INFO 93175 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9ms. Found 0 repository interfaces.
+2020-11-20 19:26:39.892  INFO 93175 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5e27eec2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-20 19:26:40.006  INFO 93175 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'redisConfig' of type [com.yidiandian.utils.RedisConfig$$EnhancerBySpringCGLIB$$3bc4c71a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-20 19:26:40.338  INFO 93175 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9098 (http)
+2020-11-20 19:26:40.356  INFO 93175 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-11-20 19:26:40.357  INFO 93175 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2020-11-20 19:26:40.449  INFO 93175 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-11-20 19:26:40.449  INFO 93175 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1871 ms
+2020-11-20 19:26:40.793  INFO 93175 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-11-20 19:26:41.192  INFO 93175 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-11-20 19:26:41.250  INFO 93175 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-11-20 19:26:41.338  INFO 93175 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2020-11-20 19:26:41.339  INFO 93175 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-11-20 19:26:41.485  INFO 93175 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-11-20 19:26:41.614  INFO 93175 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-11-20 19:26:42.214  INFO 93175 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-20 19:26:43.352  WARN 93175 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-20 19:26:43.671  INFO 93175 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 19:26:43.779  WARN 93175 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-11-20 19:26:44.080  INFO 93175 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-11-20 19:26:44.094  INFO 93175 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-11-20 19:26:44.108  INFO 93175 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-11-20 19:26:44.400  INFO 93175 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9098 (http) with context path ''
+2020-11-20 19:26:44.403  INFO 93175 --- [main] com.yidiandian.TaobaoApplication         : Started TaobaoApplication in 6.369 seconds (JVM running for 7.078)
+2020-11-20 19:27:01.972  INFO 93175 --- [http-nio-9098-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 19:27:01.972  INFO 93175 --- [http-nio-9098-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-11-20 19:27:01.992  INFO 93175 --- [http-nio-9098-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 19 ms
+2020-11-20 19:27:15.543  INFO 93175 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-20 19:27:15.545  INFO 93175 --- [Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-20 19:27:15.550  INFO 93175 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-11-20 19:27:15.557  INFO 93175 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-11-20 19:28:10.772  INFO 93454 --- [main] com.yidiandian.TaobaoApplication         : Starting TaobaoApplication on FarbendeMacBook-Pro.local with PID 93454 (/Users/farben/Documents/IdeaProjects/ydd/taobao/target/classes started by farben in /Users/farben/Documents/IdeaProjects/ydd/taobao)
+2020-11-20 19:28:10.775  INFO 93454 --- [main] com.yidiandian.TaobaoApplication         : The following profiles are active: dev
+2020-11-20 19:28:11.574  INFO 93454 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 19:28:11.575  INFO 93454 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-11-20 19:28:11.622  INFO 93454 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42ms. Found 1 repository interfaces.
+2020-11-20 19:28:11.631  INFO 93454 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-20 19:28:11.631  INFO 93454 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-11-20 19:28:11.645  INFO 93454 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.yidiandian.mapper.CategoriesMapper.
+2020-11-20 19:28:11.646  INFO 93454 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9ms. Found 0 repository interfaces.
+2020-11-20 19:28:12.081  INFO 93454 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$fe253a60] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-20 19:28:12.188  INFO 93454 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'redisConfig' of type [com.yidiandian.utils.RedisConfig$$EnhancerBySpringCGLIB$$dbc212b8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-20 19:28:12.552  INFO 93454 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9098 (http)
+2020-11-20 19:28:12.573  INFO 93454 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-11-20 19:28:12.573  INFO 93454 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2020-11-20 19:28:12.659  INFO 93454 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-11-20 19:28:12.659  INFO 93454 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1846 ms
+2020-11-20 19:28:12.950  INFO 93454 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-11-20 19:28:13.267  INFO 93454 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-11-20 19:28:13.322  INFO 93454 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-11-20 19:28:13.377  INFO 93454 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2020-11-20 19:28:13.378  INFO 93454 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-11-20 19:28:13.510  INFO 93454 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-11-20 19:28:13.690  INFO 93454 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-11-20 19:28:14.379  INFO 93454 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-20 19:28:15.356  WARN 93454 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-20 19:28:15.639  INFO 93454 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-20 19:28:15.727  WARN 93454 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-11-20 19:28:15.956  INFO 93454 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-11-20 19:28:15.971  INFO 93454 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-11-20 19:28:15.990  INFO 93454 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-11-20 19:28:16.543  INFO 93454 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9098 (http) with context path ''
+2020-11-20 19:28:16.550  INFO 93454 --- [main] com.yidiandian.TaobaoApplication         : Started TaobaoApplication in 6.242 seconds (JVM running for 6.935)
+2020-11-20 19:28:28.939  INFO 93454 --- [http-nio-9098-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-20 19:28:28.939  INFO 93454 --- [http-nio-9098-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-11-20 19:28:28.949  INFO 93454 --- [http-nio-9098-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-11-20 19:29:06.574  INFO 93454 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-20 19:29:06.576  INFO 93454 --- [Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-20 19:29:06.579  INFO 93454 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-11-20 19:29:06.586  INFO 93454 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

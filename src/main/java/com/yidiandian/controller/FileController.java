@@ -1,5 +1,7 @@
-package com.yidiandian.fastdfs;
+package com.yidiandian.controller;
 
+import com.yidiandian.fastdfs.FastDFSClient;
+import com.yidiandian.fastdfs.FastDFSFile;
 import com.yidiandian.support.Result;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.*;
@@ -51,11 +53,5 @@ public class FileController {
             e.printStackTrace();
         }
         return new Result(false, 400,"文件上传失败");
-    }
-
-    @PostMapping("/download")
-    public void download(@RequestBody Image image){
-        InputStream input = FastDFSClient.downFile( image.getGroup(),image.getImage() );
-        System.out.println("得到的六文件："+input);
     }
 }

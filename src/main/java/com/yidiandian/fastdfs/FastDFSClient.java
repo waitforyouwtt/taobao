@@ -1,6 +1,5 @@
 package com.yidiandian.fastdfs;
 
-import com.yidiandian.entity.FastDFSFile;
 import org.csource.fastdfs.*;
 import org.springframework.core.io.ClassPathResource;
 import org.csource.common.NameValuePair;
