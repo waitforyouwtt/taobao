@@ -7,6 +7,8 @@ import com.yidiandian.vo.ScenicSpotStarVO;
 import com.yidiandian.vo.UserDynamicVO;
 import com.yidiandian.vo.UserInfoVO;
 
+import java.util.List;
+
 /**
  * @author 凤凰小哥哥
  * @date 2020-10-15
@@ -54,5 +56,7 @@ public interface UserInfoService {
      * @return
      */
     Result deleteDynamic(UserDynamicVO vo);
+
+    Result findList(String name, List<String> codes);
 
 }

@@ -4,6 +4,8 @@ import com.yidiandian.entity.UserInfo;
 import com.yidiandian.view.UserInfoView;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -73,4 +75,5 @@ public interface UserInfoDao {
     UserInfo findUserInfoByName(String name);
 
 
+    List<UserInfo> findUserList(@Param("userName") String name, @Param("list") Collection<String> userCodes);
 }

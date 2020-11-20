@@ -23,6 +23,7 @@ import java.util.*;
 @Service
 @Slf4j
 public class ScenicSpotImagesServiceImpl implements ScenicSpotImagesService {
+
     @Resource
     private ScenicSpotImagesDao scenicSpotImagesDao;
 
@@ -35,6 +36,12 @@ public class ScenicSpotImagesServiceImpl implements ScenicSpotImagesService {
     @Override
     public ScenicSpotImages queryById(Integer id) {
         return this.scenicSpotImagesDao.queryById(id);
+    }
+
+    @Override
+    public List<ScenicSpotImages> queryAll() {
+        ScenicSpotImages image = new ScenicSpotImages();
+        return this.scenicSpotImagesDao.queryAll(image);
     }
 
     /**

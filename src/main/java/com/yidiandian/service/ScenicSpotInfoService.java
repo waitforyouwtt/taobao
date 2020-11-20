@@ -91,4 +91,5 @@ public interface ScenicSpotInfoService {
      * @return
      */
     int deleteUserDynamic(UserDynamicVO vo);
+
 }

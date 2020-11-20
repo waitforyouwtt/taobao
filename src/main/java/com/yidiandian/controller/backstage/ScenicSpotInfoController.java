@@ -1,7 +1,6 @@
 package com.yidiandian.controller.backstage;
 
 import com.yidiandian.page.PageRequest;
-import com.yidiandian.page.PageResult;
 import com.yidiandian.service.ScenicSpotInfoService;
 import com.yidiandian.support.Result;
 import com.yidiandian.view.ScenicSpotInfoView;
@@ -64,6 +63,13 @@ public class ScenicSpotInfoController {
     @PostMapping("/findDynamicPage")
     @ResponseBody
     public Result findDynamicPage(@RequestBody PageRequest pageRequest){
+        return scenicSpotInfoService.findSpotInfoPage(pageRequest);
+    }
+
+    @ApiOperation(value = "查询image动态且分页", notes = "动态信息")
+    @GetMapping("/findImagePage")
+    @ResponseBody
+    public Result findImagePage(PageRequest pageRequest){
         return scenicSpotInfoService.findSpotInfoPage(pageRequest);
     }
 }

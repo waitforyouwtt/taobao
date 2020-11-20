@@ -6,9 +6,9 @@ spring:
     #Mac的密码：
     password: root123456
   jpa:
-      hibernate:
-        ddl-auto: update
-      show-sql: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
   #Mac的redis
   redis:
     host: 127.0.0.1
@@ -21,7 +21,7 @@ spring:
     password:
 
   thymeleaf:
-   # prefix: classpath:/templates
+    # prefix: classpath:/templates
     suffix: .html
     mode: HTML5
     encoding: UTF-8

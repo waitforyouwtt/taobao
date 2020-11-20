@@ -10,7 +10,6 @@ import com.yidiandian.service.*;
 import com.yidiandian.support.Result;
 import com.yidiandian.utils.GenerateCodeUtils;
 import com.yidiandian.view.UserInfoView;
-import com.yidiandian.vo.ScenicSpotStarVO;
 import com.yidiandian.vo.UserDynamicVO;
 import com.yidiandian.vo.UserInfoVO;
 import lombok.extern.slf4j.Slf4j;
@@ -23,7 +22,9 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import javax.annotation.Resource;
 import javax.persistence.RollbackException;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 /**
@@ -154,6 +155,12 @@ public class UserInfoServiceImpl implements UserInfoService {
         beanCopier.copy(userInfoVO,userInfo,null);
         userInfo.setUserId(userId);
         return userInfo;
+    }
+
+    @Override
+    public Result findList(String name,List<String> codes){
+        Set<String> set = new HashSet<>(codes);
+        return Result.success(userInfoDao.findUserList(name,set));
     }
 
 }

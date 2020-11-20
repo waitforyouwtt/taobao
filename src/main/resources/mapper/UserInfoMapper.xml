@@ -133,4 +133,21 @@
     </where>
     </select>
 
+
+    <select id="findUserList" resultMap="BaseResultMap">
+        select
+        id, user_id, user_name, user_nick, password, gender, head_image, phone, status, create_time, update_time
+        from Travel.user_info
+        <where>
+            <if test="userName != null and userName != ''">
+                user_name = #{userName}
+            </if>
+            and user_id in
+            <foreach collection="list" index="index" item="item" open="("
+                     separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+    </select>
+
 </mapper>

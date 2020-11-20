@@ -10,9 +10,13 @@ import com.yidiandian.vo.ScenicSpotStarVO;
 import com.yidiandian.vo.UserDynamicVO;
 import com.yidiandian.vo.UserInfoVO;
 import io.swagger.annotations.ApiOperation;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author 凤凰小哥哥
@@ -115,6 +119,13 @@ public class UserInfoController {
     @ResponseBody
     public Result cancelDynamicComment(@RequestBody ScenicSpotCommentVO vo){
         return scenicSpotCommentService.cancelDynamicComment(vo);
+    }
+
+    @GetMapping("/findList")
+    @ResponseBody
+    public Result findList(@RequestParam("userName") String userName,@RequestParam("userCodes") String userCodes){
+        List<String> codes = Arrays.asList(userCodes.split(","));
+        return userInfoService.findList(userName,codes);
     }
 
 }

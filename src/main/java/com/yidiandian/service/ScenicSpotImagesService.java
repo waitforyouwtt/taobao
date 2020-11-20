@@ -22,6 +22,8 @@ public interface ScenicSpotImagesService {
      */
     ScenicSpotImages queryById(Integer id);
 
+    List<ScenicSpotImages> queryAll();
+
     /**
      * 查询多条数据
      *

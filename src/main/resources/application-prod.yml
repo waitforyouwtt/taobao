@@ -3,13 +3,13 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://81.68.86.66:3306/test?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&allowMultiQueries=true
     username: root
-    #Mac的密码：
-    password: root
+    #腾讯云的密码：
+    password: yunlan
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
-
+  #Mac的redis
   redis:
     host: 81.68.86.66
     port: 6379
@@ -18,10 +18,10 @@ spring:
         max-active: 8
         max-wait: -1
         max-idle: 500
-    password: 123456
+    password:
 
   thymeleaf:
-    prefix: classpath:/templates/html/
+    # prefix: classpath:/templates
     suffix: .html
     mode: HTML5
     encoding: UTF-8
@@ -39,12 +39,26 @@ spring:
     starttls:
       enable: true
       required: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
 
 mybatis:
   mapper-locations: classpath*:mapper/*Mapper.xml
   type-aliases-package: com.yidiandian.entity
 
+#分页配置
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
 
 server:
   port: 9098
 
+logging:
+  file: log/Travel-dev.log
+  level:
+    com.yidiandian.dao: debug
